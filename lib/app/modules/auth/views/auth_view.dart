@@ -2,7 +2,6 @@ import 'package:dein_app/app/routes/app_pages.dart';
 import 'package:dein_app/app/widgets/d_button.dart';
 import 'package:dein_app/app/widgets/d_textfield.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
@@ -64,17 +63,23 @@ class AuthView extends GetView<AuthController> {
               SizedBox(
                 height: 3.h,
               ),
-              const DTextField(placeHolder: "Email Address"),
+              DTextField(
+                placeHolder: "Email Address",
+                controller: controller.email,
+              ),
               SizedBox(
                 height: 3.h,
               ),
-              const DTextField(placeHolder: "Password"),
+              DTextField(
+                placeHolder: "Password",
+                controller: controller.password,
+              ),
               SizedBox(
                 height: 4.h,
               ),
               DButton(
                 text: "Login",
-                onPress: () => Get.offAllNamed(Routes.SETUP_PROFILE),
+                onPress: controller.submitForm,
               ),
               SizedBox(
                 height: 3.h,

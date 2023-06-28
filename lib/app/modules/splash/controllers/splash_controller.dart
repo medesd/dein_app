@@ -6,10 +6,12 @@ class SplashController extends GetxController {
   //TODO: Implement SplashController
 
   final count = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
-    Get.toNamed(Routes.HOME);
+    Future.delayed(const Duration(seconds: 3))
+        .then((value) => Get.offAllNamed(Routes.SETUP_PROFILE));
   }
 
   @override
