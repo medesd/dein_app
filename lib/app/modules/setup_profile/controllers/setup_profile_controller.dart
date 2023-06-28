@@ -29,8 +29,10 @@ class SetupProfileController extends GetxController {
 
   void pressContinue() {
     if (pageIndex.value == 4) return;
-    if(dataController.avatar.isEmpty && dataController.document.isEmpty && pageIndex.value==2){
-      Get.showSnackbar(GetSnackBar(animationDuration: Duration(seconds: 3),isDismissible: true,message: "make sure to upload a selfie and document",));
+
+    if(dataController.avatar.isEmpty && dataController.document.isEmpty && pageIndex.value==1){
+      Get.showSnackbar(GetSnackBar(animationDuration: Duration(seconds: 2),isDismissible: true,message: "make sure to upload a selfie and document", duration: Duration(seconds: 3),));
+      return;
     }
     controller.animateToPage(pageIndex.value + 1,
         duration: const Duration(milliseconds: 250), curve: Curves.ease);

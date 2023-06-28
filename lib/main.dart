@@ -19,6 +19,7 @@ class DeinApp extends StatelessWidget {
         Future.delayed(Duration.zero)
             .then((value) => Get.put(SplashController()));
         return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'dein.app',
           getPages: AppPages.routes,
           home: const SplashView(),
