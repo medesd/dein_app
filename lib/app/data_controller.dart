@@ -30,6 +30,7 @@ Gesundheit, Universität Basel
         "TRX Training",
         "Functional Training"
       ],
+      "is_job": false,
       "reviews": [
         {
           "rating": 4,
@@ -53,7 +54,8 @@ iaculis dolor felis at nunc. Maecenas eu """,
       "location": "Bern",
       "age": 37,
       "images": [AssetsRes.USER2],
-      "mission": """In eget sapien vitae massa rhoncus lacinia.
+      "mission": "Software developer",
+      "about": """In eget sapien vitae massa rhoncus lacinia.
 Nullam at leo nec metus aliquam semper.
 Phasellus tincidunt, ante nec lacinia
 ultrices, quam mi dictum libero, vitae
@@ -73,7 +75,7 @@ communication issues
       "salary": "10-15,000 CHF",
       "is_job": true,
       "agent_name": "Swiss Digital AG",
-      "agent_location": "Waaghaus-Passage 8 3011 Bern, Switzerland"
+      "agent_location": "Waaghaus-Passage 8\n3011 Bern, Switzerland"
     }
   ].map((e) => UserParser.fromJson(e));
 }

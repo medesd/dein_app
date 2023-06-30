@@ -1,3 +1,4 @@
+import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:dein_app/app/data_controller.dart';
 import 'package:dein_app/app/modules/home/views/message_view.dart';
 import 'package:dein_app/app/modules/home/views/setting_view.dart';
@@ -18,6 +19,8 @@ class HomeController extends GetxController {
   var touchedUser = 0.obs;
 
   var searchController = TextEditingController();
+
+  var swipeController = AppinioSwiperController();
 
   @override
   void onInit() {

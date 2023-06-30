@@ -1,3 +1,4 @@
+import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:dein_app/app/data_controller.dart';
 import 'package:dein_app/app/modules/home/controllers/home_controller.dart';
 import 'package:dein_app/res/assets_res.dart';
@@ -16,6 +17,10 @@ class Matches extends GetView<HomeController> {
     var selectedUser = dataController.users
         .where((element) => element.id == controller.touchedUser.value)
         .first;
+    var filteredUsers = dataController.users
+        .where((element) => element.id != selectedUser.id)
+        .toList();
+    filteredUsers.insert(0, selectedUser);
     return Container(
       color: const Color(0xfff1f6fd),
       child: Column(
@@ -47,95 +52,114 @@ class Matches extends GetView<HomeController> {
               ],
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(8.sp),
-            child: Container(
-              height: 73.h,
-              width: 100.w,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.sp),
-                color: Colors.grey,
-                image: DecorationImage(
-                  image: AssetImage(selectedUser.images!.first),
-                ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          selectedUser.name!,
-                          style:
-                              TextStyle(color: Colors.white, fontSize: 18.sp),
+          SizedBox(
+            height: 80.h,
+            child: AppinioSwiper(
+                controller: controller.swipeController,
+                cardsCount: filteredUsers.length,
+                loop: true,
+                cardsBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.all(8.sp),
+                    child: Container(
+                      height: 73.h,
+                      width: 100.w,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.sp),
+                        color: Colors.grey,
+                        image: DecorationImage(
+                          image: AssetImage(filteredUsers[index].images!.first),
                         ),
-                        SizedBox(
-                          width: 1.w,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Get.toNamed(Routes.USER_DETAILS,
-                                arguments: selectedUser.id!);
-                          },
-                          child: CircleAvatar(
-                            radius: 9.sp,
-                            backgroundColor: Colors.white,
-                            child: Text(
-                              "i",
-                              style: TextStyle(
-                                  color: Colors.black, fontSize: 12.sp),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  filteredUsers[index].name!,
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18.sp),
+                                ),
+                                SizedBox(
+                                  width: 1.w,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.toNamed(Routes.USER_DETAILS,
+                                        arguments: filteredUsers[index].id!);
+                                  },
+                                  child: CircleAvatar(
+                                    radius: 9.sp,
+                                    backgroundColor: Colors.white,
+                                    child: Text(
+                                      "i",
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 12.sp),
+                                    ),
+                                  ),
+                                )
+                              ],
                             ),
-                          ),
-                        )
-                      ],
+                            SizedBox(height: 1.h),
+                            Row(
+                              children: [
+                                Text(
+                                  filteredUsers[index].location!,
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12.sp),
+                                ),
+                                Text(
+                                  " • ",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12.sp),
+                                ),
+                                Text(
+                                  "${filteredUsers[index].age} years",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12.sp),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 2.h),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    controller.swipeController.swipeLeft();
+                                  },
+                                  child: Image.asset(
+                                    AssetsRes.CLOSE_CIRCLE,
+                                    scale: 3.sp,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 3.w,
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    controller.swipeController.swipeRight();
+                                  },
+                                  child: Image.asset(
+                                    AssetsRes.HEART_CIRCLE,
+                                    scale: 3.sp,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 3.h,
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    SizedBox(height: 1.h),
-                    Row(
-                      children: [
-                        Text(
-                          selectedUser.location!,
-                          style:
-                              TextStyle(color: Colors.white, fontSize: 12.sp),
-                        ),
-                        Text(
-                          " • ",
-                          style:
-                              TextStyle(color: Colors.white, fontSize: 12.sp),
-                        ),
-                        Text(
-                          "${selectedUser.age} years",
-                          style:
-                              TextStyle(color: Colors.white, fontSize: 12.sp),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 2.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          AssetsRes.CLOSE_CIRCLE,
-                          scale: 3.sp,
-                        ),
-                        SizedBox(
-                          width: 3.w,
-                        ),
-                        Image.asset(
-                          AssetsRes.HEART_CIRCLE,
-                          scale: 3.sp,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 3.h,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+                  );
+                }),
           ),
           SizedBox(
             height: 5.h,
