@@ -1,6 +1,9 @@
+import 'package:dein_app/app/data_controller.dart';
 import 'package:dein_app/app/widgets/d_button.dart';
-import 'package:dein_app/res/assets_res.dart';
+import 'package:dein_app/app/widgets/d_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:scroll_date_picker/scroll_date_picker.dart';
 import 'package:sizer/sizer.dart';
 
 class StepFive extends StatelessWidget {
@@ -8,73 +11,71 @@ class StepFive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var dataController = Get.put(DataController());
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        ListTile(
-          leading: Image.asset(
-            AssetsRes.PEN,
-            scale: 5,
-          ),
-          minLeadingWidth: 5.w,
-          contentPadding: EdgeInsets.zero,
-          visualDensity: VisualDensity.compact,
-          title: const Text(
-            "Education",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          trailing: const Text(
-            "Edit",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: Color(0xFF5666d8)),
-          ),
-        ),
-        ListTile(
-          leading: Image.asset(
-            AssetsRes.SUITCASE,
-            scale: 5,
-          ),
-          visualDensity: VisualDensity.compact,
-          contentPadding: EdgeInsets.zero,
-          minLeadingWidth: 5.w,
-          title: const Text(
-            "Experience",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          trailing: const Text(
-            "Edit",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: Color(0xFF5666d8)),
-          ),
-        ),
-        SizedBox(
-          width: 90.w,
-          child: const Divider(
-            thickness: 1.5,
-          ),
-        ),
-        SizedBox(height: 3.h,),
         Text(
-          "Documents",
+          "Whats your name?",
           style: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.bold,
             color: const Color(0xFF292c57),
           ),
         ),
-        SizedBox(height: 4.h,),
-        ListTile(
-          leading: Image.asset(
-            AssetsRes.PLUS,
-            scale: 5,
+        SizedBox(
+          height: 2.h,
+        ),
+        DTextField(
+          placeHolder: "Name",
+          withShadow: false,
+          withBorder: true,
+          onChanged: (val) {
+            if (val.isEmpty) return;
+            dataController.name(val);
+          },
+        ),
+        SizedBox(
+          height: 2.h,
+        ),
+        Text(
+          "When's your birthday",
+          style: TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.bold,
+            color: const Color(0xFF292c57),
           ),
-          visualDensity: VisualDensity.compact,
-          contentPadding: EdgeInsets.zero,
-          minLeadingWidth: 5.w,
-          title: const Text(
-            "Add documents",
-            style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 4.h,
+        ),
+        SizedBox(
+          height: 16.h,
+          child: ScrollDatePicker(
+            options: const DatePickerOptions(
+              itemExtent: 50,
+            ),
+            indicator: Container(
+              height: 16.h,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0),
+                borderRadius: const BorderRadius.all(Radius.circular(4)),
+              ),
+              child: Align(
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(.15),
+                      borderRadius: BorderRadius.circular(4)),
+                  width: 90.w,
+                  height: 50,
+                ),
+              ),
+            ),
+            selectedDate: DateTime.now(),
+            onDateTimeChanged: (date) {
+              dataController.birthday(date);
+            },
           ),
         ),
       ],

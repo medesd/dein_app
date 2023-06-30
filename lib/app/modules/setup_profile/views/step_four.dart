@@ -1,6 +1,5 @@
-import 'package:dein_app/app/widgets/d_button.dart';
+import 'package:dein_app/app/widgets/d_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:scroll_date_picker/scroll_date_picker.dart';
 import 'package:sizer/sizer.dart';
 
 class StepFour extends StatelessWidget {
@@ -13,42 +12,74 @@ class StepFour extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Text(
-          "When's your birthday",
+          "Verify mobile number",
           style: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.bold,
-            color: const Color(0xFF292c57),
-          ),
+              fontWeight: FontWeight.bold,
+              color: const Color(0xFF292c57),
+              fontSize: 16.sp),
         ),
-        SizedBox(
-          height: 4.h,
+        SizedBox(height: 1.h,),
+        Text(
+          "We will send you an SMS with PIN to\nverify.",
+          style: TextStyle(color: const Color(0xff646681), fontSize: 10.sp),
         ),
-
-        SizedBox(
-          height: 16.h,
-          child: ScrollDatePicker(
-            options: const DatePickerOptions(
-              itemExtent: 50,
-            ),
-            indicator: Container(
-              height: 16.h,
+        SizedBox(height: 1.h,),
+        DTextField(
+          placeHolder: "Phone number",
+          withShadow: false,
+          withBorder: true,
+          suffix: Padding(
+            padding: EdgeInsets.only(top: 1.h, bottom: 1.h, right: 1.h),
+            child: Container(
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0),
-                borderRadius: const BorderRadius.all(Radius.circular(4)),
+                color: const Color(0xff5666d8),
+                borderRadius: BorderRadius.circular(6.sp),
               ),
-              child: Align(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(.15),
-                      borderRadius: BorderRadius.circular(4)),
-                  width: 90.w,
-                  height: 50,
+              child: const Center(
+                child: Text(
+                  "Send",
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ),
-            selectedDate: DateTime.now(),
-            onDateTimeChanged: (date) {},
           ),
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+        const Divider(
+          thickness: 1,
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "PIN",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xFF292c57),
+                  fontSize: 13.sp),
+            ),
+            const Row(
+              children: [
+                Text("Didn't receive it? "),
+                Text(
+                  "Send again",
+                  style: TextStyle(color: Color(0xff5666d8)),
+                ),
+              ],
+            )
+          ],
+        ),
+        SizedBox(height: 2.h,),
+        const DTextField(
+          placeHolder: "PIN",
+          withShadow: false,
+          withBorder: true,
+          hidden: true,
         ),
       ],
     );

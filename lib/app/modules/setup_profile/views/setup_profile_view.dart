@@ -1,8 +1,10 @@
 import 'package:dein_app/app/modules/setup_profile/views/step_five.dart';
 import 'package:dein_app/app/modules/setup_profile/views/step_four.dart';
-import 'package:dein_app/app/modules/setup_profile/views/step_one.dart';
+import 'package:dein_app/app/modules/setup_profile/views/step_seven.dart';
+import 'package:dein_app/app/modules/setup_profile/views/step_six.dart';
 import 'package:dein_app/app/modules/setup_profile/views/step_three.dart';
 import 'package:dein_app/app/modules/setup_profile/views/step_two.dart';
+import 'package:dein_app/app/modules/setup_profile/views/step_one.dart';
 import 'package:dein_app/app/widgets/d_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,18 +20,7 @@ class SetupProfileView extends GetView<SetupProfileController> {
     return WillPopScope(
       onWillPop: () async {
         if (controller.pageIndex.value == 0) {
-          if (controller.backTimes.value) {
-            return true;
-          } else {
-            Get.showSnackbar(
-              const GetSnackBar(
-                duration: Duration(seconds: 3),
-                isDismissible: true,
-                message: "Press again to exit",
-              ),
-            );
-            controller.backTimes(true);
-          }
+          return true;
         } else {
           controller.controller.animateToPage(controller.pageIndex.value - 1,
               duration: const Duration(milliseconds: 250), curve: Curves.ease);
@@ -37,24 +28,14 @@ class SetupProfileView extends GetView<SetupProfileController> {
         return false;
       },
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
           leading: InkWell(
             onTap: () {
               if (controller.pageIndex.value == 0) {
-                if (controller.backTimes.value) {
-                  Get.back();
-                } else {
-                  Get.showSnackbar(
-                    const GetSnackBar(
-                      duration: Duration(seconds: 3),
-                      isDismissible: true,
-                      message: "Press again to exit",
-                    ),
-                  );
-                  controller.backTimes(true);
-                }
+                Get.back();
               } else {
                 controller.controller.animateToPage(
                     controller.pageIndex.value - 1,
@@ -68,7 +49,7 @@ class SetupProfileView extends GetView<SetupProfileController> {
             ),
           ),
           actions: [
-            Obx(() => [1, 2].contains(controller.pageIndex.value)
+            Obx(() => [1, 0].contains(controller.pageIndex.value)
                 ? Container()
                 : InkWell(
                     onTap: () {
@@ -120,6 +101,8 @@ class SetupProfileView extends GetView<SetupProfileController> {
                         StepThree(),
                         StepFour(),
                         StepFive(),
+                        StepSix(),
+                        StepSeven(),
                       ],
                     ),
                   ),

@@ -14,6 +14,7 @@ class ChooseUserView extends GetView<ChooseUserController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff1f6fd),
       appBar: AppBar(
         leading: Container(),
         backgroundColor: Colors.transparent,
@@ -30,7 +31,7 @@ class ChooseUserView extends GetView<ChooseUserController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Obx(() => InkWell(
@@ -39,7 +40,7 @@ class ChooseUserView extends GetView<ChooseUserController> {
                       },
                       child: Container(
                         height: 24.h,
-                        width: 38.w,
+                        width: 100.w,
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: !controller.businessAccount.value
@@ -48,41 +49,50 @@ class ChooseUserView extends GetView<ChooseUserController> {
                           ),
                           borderRadius: BorderRadius.circular(10.sp),
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              AssetsRes.USER,
-                              fit: BoxFit.fitWidth,
-                              width: 15.w,
-                              height: 10.h,
-                              color: !controller.businessAccount.value
-                                  ? const Color(0xFF5666d8)
-                                  : const Color(0xFFc8c9d4),
-                            ),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              "Normal",
-                              style: TextStyle(
-                                  color: !controller.businessAccount.value
-                                      ? const Color(0xFF5666d8)
-                                      : const Color(0xFF646681),
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 7.w, top: 3.h),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                AssetsRes.USER,
+                                fit: BoxFit.fitWidth,
+                                width: 10.w,
+                                height: 10.w,
+                                color: !controller.businessAccount.value
+                                    ? const Color(0xFF5666d8)
+                                    : const Color(0xFFc8c9d4),
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
+                              Text(
+                                "Private",
+                                style: TextStyle(
+                                    color: !controller.businessAccount.value
+                                        ? const Color(0xFF5666d8)
+                                        : const Color(0xFF646681),
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
+                              Text("Choose this if you are looking for\nservices or are unemployed.",style: TextStyle(color: Color(0xFF646681)),)
+                            ],
+                          ),
                         ),
                       ),
                     )),
+                SizedBox(height: 2.h,),
                 Obx(() => InkWell(
                       onTap: () {
                         controller.businessAccount(true);
                       },
                       child: Container(
                         height: 24.h,
-                        width: 38.w,
+                        width: 100.w,
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: controller.businessAccount.value
@@ -91,31 +101,39 @@ class ChooseUserView extends GetView<ChooseUserController> {
                           ),
                           borderRadius: BorderRadius.circular(10.sp),
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              AssetsRes.FACTORY,
-                              width: 15.w,
-                              fit: BoxFit.fitWidth,
-                              height: 10.h,
-                              color:controller.businessAccount.value
-                                  ? const Color(0xFF5666d8)
-                                  : const Color(0xFFc8c9d4),
-                            ),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              "Business",
-                              style: TextStyle(
-                                  color: controller.businessAccount.value
-                                      ? const Color(0xFF5666d8)
-                                      : const Color(0xFF646681),
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                        child: Padding(
+                          padding:EdgeInsets.only(left: 7.w, top: 3.h),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                AssetsRes.FACTORY,
+                                fit: BoxFit.fitWidth,
+                                width: 10.w,
+                                height: 10.w,
+                                color: controller.businessAccount.value
+                                    ? const Color(0xFF5666d8)
+                                    : const Color(0xFFc8c9d4),
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
+                              Text(
+                                "Business",
+                                style: TextStyle(
+                                    color: controller.businessAccount.value
+                                        ? const Color(0xFF5666d8)
+                                        : const Color(0xFF646681),
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
+                              Text("Choose this if you are providing\nservices or looking for employees.",style: TextStyle(color: Color(0xFF646681)),)
+                            ],
+                          ),
                         ),
                       ),
                     )),
@@ -126,7 +144,7 @@ class ChooseUserView extends GetView<ChooseUserController> {
             ),
             DButton(
               text: "Continue",
-              onPress: () => Get.offAllNamed(Routes.AUTH),
+              onPress: () => Get.offAllNamed(Routes.PRE_AUTH),
             ),
             SizedBox(
               height: 5.h,

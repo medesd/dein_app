@@ -94,13 +94,30 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/icons/avatar.png
+    - assets/icons/back.PNG
     - assets/icons/camera.png
+    - assets/icons/close.png
+    - assets/icons/close_circle.PNG
+    - assets/icons/email.PNG
     - assets/icons/factory.png
+    - assets/icons/google.png
+    - assets/icons/heart_circle.PNG
     - assets/icons/info.png
     - assets/icons/logo.png
     - assets/icons/logo_name.png
+    - assets/icons/message.png
     - assets/icons/pen.png
     - assets/icons/plus.png
+    - assets/icons/plus_filled.PNG
+    - assets/icons/search.png
+    - assets/icons/search_filled.png
+    - assets/icons/settings.png
+    - assets/icons/success.PNG
     - assets/icons/suitcase.png
+    - assets/icons/swiss_id.PNG
+    - assets/icons/tools.PNG
     - assets/icons/user.png
+    - assets/images/pre_auth_intro.PNG
     - assets/images/thank_you.png
+    - assets/images/user1.PNG
+    - assets/images/user2.PNG

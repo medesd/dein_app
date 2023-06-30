@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1d1d45cb-f61e-44f9-a825-d22419978006" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/icons/back.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/close_circle.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/email.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/heart_circle.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/message.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/plus_filled.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/search_filled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/settings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/success.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/swiss_id.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/tools.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/pre_auth_intro.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/user1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/user2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/home/views/match_container.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/home/views/matches.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/home/views/message_view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/home/views/search_container.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/home/views/search_view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/home/views/setting_view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/pre_auth/bindings/pre_auth_binding.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/pre_auth/controllers/pre_auth_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/pre_auth/views/pre_auth_view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/empty_photo_card.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/photo_card.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_seven.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_six.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/user_details/bindings/user_details_binding.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/user_details/controllers/user_details_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/user_details/views/user_details_view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/user_parser.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/data_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/data_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/choose_user/views/choose_user_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/choose_user/views/choose_user_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/controllers/setup_profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/controllers/setup_profile_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/setup_profile_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/setup_profile_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_five.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_five.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_four.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_four.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_one.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_one.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_three.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_three.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_two.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/splash/controllers/splash_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/splash/controllers/splash_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/splash/views/splash_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/splash/views/splash_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/routes/app_pages.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/routes/app_pages.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/routes/app_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/routes/app_routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/widgets/d_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/widgets/d_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/widgets/d_textfield.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/widgets/d_textfield.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/res/assets_res.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/res/assets_res.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2RoTQk52eUADqM54mCz8Et2Ic1w" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mohamed/StudioProjects/dein_app&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;AtomConfig&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mohamed\StudioProjects\dein_app\assets\icons" />
+      <recent name="C:\Users\mohamed\StudioProjects\dein_app\assets\images" />
+      <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\modules\home\views" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d1d45cb-f61e-44f9-a825-d22419978006" name="Changes" comment="" />
+      <created>1687915419556</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687915419556</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

@@ -5,6 +5,10 @@ class DTextField extends StatefulWidget {
   final String? placeHolder;
   final TextEditingController? controller;
   final bool area;
+  final bool withShadow;
+  final bool withBorder;
+  final Widget? suffix;
+  final bool hidden;
   final Function(String val)? onChanged;
 
   const DTextField(
@@ -12,7 +16,11 @@ class DTextField extends StatefulWidget {
       this.placeHolder,
       this.area = false,
       this.controller,
-      this.onChanged});
+      this.withShadow = true,
+      this.withBorder = false,
+      this.onChanged,
+      this.suffix,
+      this.hidden = false});
 
   @override
   State<DTextField> createState() => _DTextFieldState();
@@ -35,18 +43,21 @@ class _DTextFieldState extends State<DTextField> {
       decoration: widget.area
           ? null
           : BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                    color: const Color(0x348D8D8D),
-                    blurRadius: 15.sp,
-                    spreadRadius: 10.sp),
-              ],
+              boxShadow: widget.withShadow
+                  ? [
+                      BoxShadow(
+                          color: const Color(0x348D8D8D),
+                          blurRadius: 15.sp,
+                          spreadRadius: 10.sp),
+                    ]
+                  : null,
             ),
       child: Stack(
         children: [
           TextFormField(
             maxLength: widget.area ? 250 : null,
             controller: widget.controller,
+            obscureText: widget.hidden,
             onChanged: (val) {
               setState(() {
                 counter = val.length;
@@ -61,12 +72,12 @@ class _DTextFieldState extends State<DTextField> {
               counterText: "",
               hintStyle: const TextStyle(color: Color(0xFF9c9dac)),
               fillColor: Colors.white,
-              border: widget.area
+              border: widget.withBorder
                   ? normalBorder(
                       color: Color(0xffeaeaea),
                     )
                   : normalBorder(),
-              focusedBorder: widget.area
+              focusedBorder: widget.withBorder
                   ? normalBorder(
                       color: Color(0xffeaeaea),
                     )
@@ -74,24 +85,27 @@ class _DTextFieldState extends State<DTextField> {
               focusedErrorBorder: normalBorder(color: Colors.red),
               errorBorder: normalBorder(color: Colors.red),
               disabledBorder: normalBorder(color: Colors.grey),
-              enabledBorder: widget.area
+              enabledBorder: widget.withBorder
                   ? normalBorder(
                       color: Color(0xffeaeaea),
                     )
                   : normalBorder(),
             ),
           ),
-          if(widget.area)
-          Positioned(
-            bottom: 5,
-            right: 5,
-            child: Text(
-              "${250 - counter}",
-              style: const TextStyle(
-                color: Color(0xFF9c9dac),
+          if (widget.area)
+            Positioned(
+              bottom: 5,
+              right: 5,
+              child: Text(
+                "${250 - counter}",
+                style: const TextStyle(
+                  color: Color(0xFF9c9dac),
+                ),
               ),
-            ),
-          )
+            )
+          else if (widget.suffix != null)
+            Positioned(
+                right: 0, width: 18.w, height: 8.h, child: widget.suffix!),
         ],
       ),
     );

@@ -10,8 +10,9 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    Future.delayed(const Duration(seconds: 3))
-        .then((value) => Get.offAllNamed(Routes.CHOOSE_USER));
+    Get.offAllNamed(Routes.HOME);
+   /* Future.delayed(const Duration(seconds: 3))
+        .then((value) => Get.offAllNamed(Routes.CHOOSE_USER));*/
   }
 
   @override

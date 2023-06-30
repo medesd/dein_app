@@ -4,8 +4,17 @@ import 'package:sizer/sizer.dart';
 class DButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPress;
+  final Widget? icon;
+  final Color? color;
+  final Color? textColor;
 
-  const DButton({super.key, required this.text, this.onPress});
+  const DButton(
+      {super.key,
+      required this.text,
+      this.onPress,
+      this.icon,
+      this.color,
+      this.textColor});
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +25,22 @@ class DButton extends StatelessWidget {
         width: 100.w,
         height: 9.h,
         decoration: BoxDecoration(
-            color: const Color(0xFF5666d8),
+            color: color ?? const Color(0xFF5666d8),
             borderRadius: BorderRadius.circular(12.sp)),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 13.sp,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (icon != null) icon!,
+              Text(
+                text,
+                style: TextStyle(
+                  color: textColor ?? Colors.white,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ),
