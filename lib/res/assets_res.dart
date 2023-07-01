@@ -5,19 +5,26 @@
 class AssetsRes {
   static const String PLUGIN_NAME = 'dein_app';
   static const String PLUGIN_VERSION = '1.0.0+1';
+  static const String APP_SETTINGS = 'assets/icons/app_settings.PNG';
   static const String AVATAR = 'assets/icons/avatar.png';
   static const String BACK = 'assets/icons/back.PNG';
   static const String CAMERA = 'assets/icons/camera.png';
   static const String CLOSE = 'assets/icons/close.png';
   static const String CLOSE_CIRCLE = 'assets/icons/close_circle.PNG';
+  static const String CLOSE_FILLED = 'assets/icons/close_filled.PNG';
+  static const String EDIT = 'assets/icons/edit.PNG';
   static const String EMAIL = 'assets/icons/email.PNG';
   static const String FACTORY = 'assets/icons/factory.png';
   static const String GOOGLE = 'assets/icons/google.png';
   static const String HEART_CIRCLE = 'assets/icons/heart_circle.PNG';
+  static const String HEART_FILLED = 'assets/icons/heart_filled.PNG';
   static const String INFO = 'assets/icons/info.png';
+  static const String IS_JOB = 'assets/icons/is_job.PNG';
+  static const String LOCATION = 'assets/icons/location.PNG';
   static const String LOGO = 'assets/icons/logo.png';
   static const String LOGO_NAME = 'assets/icons/logo_name.png';
   static const String MESSAGE = 'assets/icons/message.png';
+  static const String NOTIFICATION = 'assets/icons/notification.PNG';
   static const String PEN = 'assets/icons/pen.png';
   static const String PLUS = 'assets/icons/plus.png';
   static const String PLUS_FILLED = 'assets/icons/plus_filled.PNG';
@@ -27,6 +34,7 @@ class AssetsRes {
   static const String SUCCESS = 'assets/icons/success.PNG';
   static const String SUITCASE = 'assets/icons/suitcase.png';
   static const String SWISS_ID = 'assets/icons/swiss_id.PNG';
+  static const String TO = 'assets/icons/to.PNG';
   static const String TOOLS = 'assets/icons/tools.PNG';
   static const String USER = 'assets/icons/user.png';
   static const String PRE_AUTH_INTRO = 'assets/images/pre_auth_intro.PNG';

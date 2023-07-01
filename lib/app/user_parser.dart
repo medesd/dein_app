@@ -15,6 +15,7 @@ class UserParser {
   String? agentName;
   String? agentLocation;
   bool? isJob;
+  bool? active;
 
   List<String>? services;
   List<UserReview>? reviews;
@@ -36,13 +37,15 @@ class UserParser {
     this.agentName,
     this.agentLocation,
     this.isJob,
+    this.active,
     this.services,
     this.reviews,
   });
 
   @override
   String toString() {
-    return '$location $about $mission $requirements $locationJob $typeJob $workload $agentName $agentLocation $isJob,  ${services?.join(" ")}';
+    return '$location $about $mission $requirements $locationJob $typeJob $workload $agentName $agentLocation $isJob,  ${services?.join(" ")}'
+        .replaceAll(" ", "_");
   }
 
   factory UserParser.fromJson(Map<String, dynamic> json) {
@@ -63,6 +66,7 @@ class UserParser {
       agentName: json['agent_name'],
       agentLocation: json['agent_location'],
       isJob: json['is_job'],
+      active: json['active'],
       services: json['services'],
       reviews: json['reviews'] == null
           ? List<UserReview>.from([])
@@ -88,6 +92,7 @@ class UserParser {
         'agent_name': agentName,
         'agent_location': agentLocation,
         'is_job': isJob,
+        'active': active,
         'services': services,
         'reviews': reviews?.map((e) => e.toJson()).toList(),
       };

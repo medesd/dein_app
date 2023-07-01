@@ -4,22 +4,33 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d1d45cb-f61e-44f9-a825-d22419978006" name="Changes" comment="card swiper">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="1d1d45cb-f61e-44f9-a825-d22419978006" name="Changes" comment="settings_screen">
+      <change afterPath="$PROJECT_DIR$/assets/icons/app_settings.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/close_filled.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/edit.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/heart_filled.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/is_job.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/location.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/notification.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/to.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/data_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/data_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/matches.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/matches.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/message_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/message_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/setting_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/setting_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/user_details/views/user_details_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/user_details/views/user_details_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/general.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/match_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/match_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/matches.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/matches.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/message_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/message_view/message_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/search_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/search_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/search_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/search_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/setting_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/setting_view/setting_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/user_parser.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/user_parser.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/res/assets_res.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/res/assets_res.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,9 +75,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\modules\home\views\setting_view" />
+      <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\modules\home\views\message_view" />
+      <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\modules\home\views\home_view" />
       <recent name="C:\Users\mohamed\StudioProjects\dein_app\assets\icons" />
       <recent name="C:\Users\mohamed\StudioProjects\dein_app\assets\images" />
-      <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\modules\home\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -91,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688158489718</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="settings_screen">
+      <created>1688176616091</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688176616091</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +128,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="card swiper" />
-    <option name="LAST_COMMIT_MESSAGE" value="card swiper" />
+    <MESSAGE value="settings_screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings_screen" />
   </component>
 </project>

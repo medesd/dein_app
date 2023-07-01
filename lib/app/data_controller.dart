@@ -15,6 +15,7 @@ class DataController extends GetxController {
     {
       "id": 1,
       "name": "Julien Hirano",
+      "active":false,
       "location": "Basel",
       "age": 30,
       "images": [AssetsRes.USER1],
@@ -51,6 +52,7 @@ iaculis dolor felis at nunc. Maecenas eu """,
     },
     {
       "id": 2,
+      "active":true,
       "name": "Käthi Preisig",
       "location": "Bern",
       "age": 37,

@@ -1,12 +1,12 @@
 import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:dein_app/app/data_controller.dart';
-import 'package:dein_app/app/modules/home/views/message_view.dart';
-import 'package:dein_app/app/modules/home/views/setting_view.dart';
+import 'package:dein_app/app/modules/home/views/message_view/message_view.dart';
+import 'package:dein_app/app/modules/home/views/setting_view/setting_view.dart';
 import 'package:dein_app/app/user_parser.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-import '../views/search_view.dart';
+import '../views/home_view/search_view.dart';
 
 class HomeController extends GetxController {
   var navigationIndex = 0.obs;
@@ -35,7 +35,7 @@ class HomeController extends GetxController {
           .where((element) => element
               .toString()
               .toLowerCase()
-              .contains(keyword.value.toLowerCase()))
+              .contains(keyword.value.toLowerCase().replaceAll(" ", "_")))
           .toList();
     });
   }
