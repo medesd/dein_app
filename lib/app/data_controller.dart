@@ -1,4 +1,5 @@
 import 'package:dein_app/app/user_parser.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../res/assets_res.dart';
@@ -33,14 +34,14 @@ Gesundheit, Universität Basel
       "is_job": false,
       "reviews": [
         {
-          "rating": 4,
+          "rating": 4.0,
           "text": """Sed vitae arcu. Aliquam erat volutpat.
 Praesent odio nisl, suscipit at, rhoncus sit
 amet, porttitor sit amet, leo. Aenean""",
           "user": "Michael S."
         },
         {
-          "rating": 3,
+          "rating": 3.0,
           "text": """Morbi pellentesque, mauris interdum porta
 tincidunt, neque orci molestie mauris, vitae
 iaculis dolor felis at nunc. Maecenas eu """,
@@ -78,4 +79,35 @@ communication issues
       "agent_location": "Waaghaus-Passage 8\n3011 Bern, Switzerland"
     }
   ].map((e) => UserParser.fromJson(e));
+
+  var selectedFilterType = "doctor".obs;
+
+  var filterTypes = [
+    {
+      "name": "Doctor",
+      "type": "doctor",
+      "language": ["German", "Italian", "French"]
+    },
+    {
+      "name": "Software developer",
+      "type": "software_developer",
+      "language": ["German", "Italian", "French"],
+      "employment_type": ["Lehrstellen", "ktikum", "Studentenjobs"],
+      "company_size": ["Startup", "Small", "Large"],
+    },
+    {
+      "name": "Carpenter",
+      "type": "carpenter",
+      "branch": ["Handwerk"],
+      "canton": ["Zürich"],
+      "employment_type": ["Lehrstellen", "ktikum", "Studentenjobs"],
+      "language": ["German", "Italian", "French"],
+    }
+  ];
+
+  var doctorExpSlider = 10.0.obs;
+  var softWorkSlider = const RangeValues(20, 60).obs;
+  var softEmpType = "Lehrstellen".obs;
+  var carpenterBranch = "Handwerk".obs;
+  var carpenterCanton = "Zürich".obs;
 }

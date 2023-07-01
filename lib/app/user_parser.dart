@@ -94,7 +94,7 @@ class UserParser {
 }
 
 class UserReview {
-  int? rating;
+  double? rating;
   String? text;
   String? user;
 

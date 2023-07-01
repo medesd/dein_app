@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -76,7 +77,7 @@ class UserDetailsView extends GetView<UserDetailsController> {
                               ? "About me"
                               : controller.user.value.mission!,
                           style: TextStyle(
-                              fontSize: 12.sp, color: const Color(0xff292c57)),
+                              fontSize: 12.sp,fontWeight: FontWeight.bold, color: const Color(0xff292c57)),
                         ),
                         SizedBox(
                           height: 1.5.h,
@@ -93,7 +94,7 @@ class UserDetailsView extends GetView<UserDetailsController> {
                               ? "Opening hours"
                               : "Requirements",
                           style: TextStyle(
-                              fontSize: 12.sp, color: const Color(0xff292c57)),
+                              fontSize: 12.sp,fontWeight: FontWeight.bold, color: const Color(0xff292c57)),
                         ),
                         SizedBox(
                           height: 1.5.h,
@@ -118,6 +119,7 @@ class UserDetailsView extends GetView<UserDetailsController> {
                             "Services",
                             style: TextStyle(
                               fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
                               color: const Color(0xff292c57),
                             ),
                           ),
@@ -157,7 +159,7 @@ class UserDetailsView extends GetView<UserDetailsController> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const Text("Employment"),
+                                        const Text("Employment",style: TextStyle(fontWeight: FontWeight.bold,),),
                                         SizedBox(
                                           height: 1.h,
                                         ),
@@ -176,7 +178,7 @@ class UserDetailsView extends GetView<UserDetailsController> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const Text("Location"),
+                                        const Text("Location",style: TextStyle(fontWeight: FontWeight.bold)),
                                         SizedBox(
                                           height: 1.h,
                                         ),
@@ -197,7 +199,7 @@ class UserDetailsView extends GetView<UserDetailsController> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const Text("Salary"),
+                                        const Text("Salary",style: TextStyle(fontWeight: FontWeight.bold)),
                                         SizedBox(
                                           height: 1.h,
                                         ),
@@ -216,7 +218,7 @@ class UserDetailsView extends GetView<UserDetailsController> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const Text("Workload"),
+                                        const Text("Workload",style: TextStyle(fontWeight: FontWeight.bold)),
                                         SizedBox(
                                           height: 1.h,
                                         ),
@@ -243,31 +245,72 @@ class UserDetailsView extends GetView<UserDetailsController> {
                           height: 5.h,
                         ),
                         if (!controller.user.value.isJob!)
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "${controller.user.value.reviews!.length} reviews",
-                                style: TextStyle(
-                                  fontSize: 12.sp,
-                                  color: const Color(0xff292c57),
-                                ),
-                              ),
                               Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Icon(
-                                    Icons.star_rate_rounded,
-                                    color: Color(0xffee9d48),
-                                  ),
                                   Text(
-                                    "${controller.user.value.reviews!.map((e) => e.rating!).reduce((value, element) => value + element) / controller.user.value.reviews!.length} (${controller.user.value.reviews!.length})",
+                                    "${controller.user.value.reviews!.length} reviews",
                                     style: TextStyle(
                                       fontSize: 12.sp,
+                                      fontWeight: FontWeight.bold,
                                       color: const Color(0xff292c57),
                                     ),
                                   ),
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.star_rate_rounded,
+                                        color: Color(0xffee9d48),
+                                      ),
+                                      Text(
+                                        "${controller.user.value.reviews!.map((e) => e.rating!).reduce((value, element) => value + element) / controller.user.value.reviews!.length} (${controller.user.value.reviews!.length})",
+                                        style: TextStyle(
+                                          fontSize: 12.sp,
+                                          color: const Color(0xff292c57),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ],
-                              )
+                              ),
+                              SizedBox(
+                                height: 3.h,
+                              ),
+                              ...controller.user.value.reviews!.map(
+                                (e) => Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    RatingBarIndicator(
+                                      rating: e.rating!,
+                                      itemBuilder: (context, index) =>
+                                          const Icon(
+                                        Icons.star_rate_rounded,
+                                        color: Colors.amber,
+                                      ),
+                                      itemCount: 5,
+                                      itemSize: 20.sp,
+                                      direction: Axis.horizontal,
+                                    ),
+                                    SizedBox(
+                                      height: 2.h,
+                                    ),
+                                    Text(
+                                      e.text!,
+                                      style: const TextStyle(
+                                          color: Color(0xff646681)),
+                                    ),
+                                    SizedBox(height: 1.h,),
+                                    Text(e.user!,style: TextStyle(color: Color(0xff9c9dac)),),
+                                    SizedBox(
+                                      height: 3.h,
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ],
                           )
                         else

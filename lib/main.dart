@@ -2,10 +2,15 @@ import 'package:dein_app/app/modules/splash/controllers/splash_controller.dart';
 import 'package:dein_app/app/modules/splash/views/splash_view.dart';
 import 'package:dein_app/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.white,
+    statusBarIconBrightness: Brightness.dark,
+  ));
   runApp(const DeinApp());
 }
 
