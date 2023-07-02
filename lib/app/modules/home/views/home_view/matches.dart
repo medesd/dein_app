@@ -1,5 +1,5 @@
 import 'package:appinio_swiper/appinio_swiper.dart';
-import 'package:dein_app/app/data_controller.dart';
+import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/modules/home/controllers/home_controller.dart';
 import 'package:dein_app/app/widgets/d_textfield.dart';
 import 'package:dein_app/res/assets_res.dart';

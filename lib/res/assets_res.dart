@@ -6,8 +6,10 @@ class AssetsRes {
   static const String PLUGIN_NAME = 'dein_app';
   static const String PLUGIN_VERSION = '1.0.0+1';
   static const String APP_SETTINGS = 'assets/icons/app_settings.PNG';
+  static const String ATTACH = 'assets/icons/attach.PNG';
   static const String AVATAR = 'assets/icons/avatar.png';
   static const String BACK = 'assets/icons/back.PNG';
+  static const String CALENDAR = 'assets/icons/calendar.PNG';
   static const String CAMERA = 'assets/icons/camera.png';
   static const String CLOSE = 'assets/icons/close.png';
   static const String CLOSE_CIRCLE = 'assets/icons/close_circle.PNG';
@@ -37,6 +39,7 @@ class AssetsRes {
   static const String TO = 'assets/icons/to.PNG';
   static const String TOOLS = 'assets/icons/tools.PNG';
   static const String USER = 'assets/icons/user.png';
+  static const String VIDEO = 'assets/icons/video.PNG';
   static const String PRE_AUTH_INTRO = 'assets/images/pre_auth_intro.PNG';
   static const String THANK_YOU = 'assets/images/thank_you.png';
   static const String USER1 = 'assets/images/user1.PNG';

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dein_app/app/data_controller.dart';
+import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/modules/setup_profile/controllers/setup_profile_controller.dart';
 import 'package:dein_app/app/widgets/d_button.dart';
 import 'package:flutter/material.dart';

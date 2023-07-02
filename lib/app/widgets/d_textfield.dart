@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
 class DTextField extends StatefulWidget {
@@ -10,6 +11,7 @@ class DTextField extends StatefulWidget {
   final Widget? suffix;
   final bool hidden;
   final Function(String val)? onChanged;
+  final Function(String val)? onSubmit;
 
   const DTextField(
       {super.key,
@@ -20,7 +22,8 @@ class DTextField extends StatefulWidget {
       this.withBorder = false,
       this.onChanged,
       this.suffix,
-      this.hidden = false});
+      this.hidden = false,
+        this.onSubmit});
 
   @override
   State<DTextField> createState() => _DTextFieldState();
@@ -55,6 +58,8 @@ class _DTextFieldState extends State<DTextField> {
       child: Stack(
         children: [
           TextFormField(
+            autofocus: false,
+            onFieldSubmitted: widget.onSubmit,
             maxLength: widget.area ? 250 : null,
             controller: widget.controller,
             obscureText: widget.hidden,

@@ -1,5 +1,5 @@
-import 'package:dein_app/app/data_controller.dart';
-import 'package:dein_app/app/user_parser.dart';
+import 'package:dein_app/app/data/data_controller.dart';
+import 'package:dein_app/app/data/user_parser.dart';
 import 'package:get/get.dart';
 
 class UserDetailsController extends GetxController {

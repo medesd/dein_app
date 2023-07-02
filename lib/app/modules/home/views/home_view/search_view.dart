@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dein_app/app/data_controller.dart';
+import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/modules/home/controllers/home_controller.dart';
 import 'package:dein_app/app/modules/home/views/home_view/matches.dart';
 import 'package:dein_app/app/modules/home/views/home_view/search_container.dart';

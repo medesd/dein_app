@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dein_app/app/data_controller.dart';
+import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/res/assets_res.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

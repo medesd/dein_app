@@ -6,6 +6,8 @@ import '../modules/choose_user/bindings/choose_user_binding.dart';
 import '../modules/choose_user/views/choose_user_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/message/bindings/message_binding.dart';
+import '../modules/message/views/message_view.dart';
 import '../modules/pre_auth/bindings/pre_auth_binding.dart';
 import '../modules/pre_auth/views/pre_auth_view.dart';
 import '../modules/setup_profile/bindings/setup_profile_binding.dart';
@@ -14,6 +16,8 @@ import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/user_details/bindings/user_details_binding.dart';
 import '../modules/user_details/views/user_details_view.dart';
+import '../modules/video_call/bindings/video_call_binding.dart';
+import '../modules/video_call/views/video_call_view.dart';
 
 part 'app_routes.dart';
 
@@ -57,6 +61,16 @@ class AppPages {
       name: _Paths.USER_DETAILS,
       page: () => const UserDetailsView(),
       binding: UserDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.MESSAGE,
+      page: () => const MessageView(),
+      binding: MessageBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIDEO_CALL,
+      page: () => const VideoCallView(),
+      binding: VideoCallBinding(),
     ),
   ];
 }

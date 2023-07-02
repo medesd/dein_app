@@ -1,4 +1,4 @@
-import 'package:dein_app/app/data_controller.dart';
+import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

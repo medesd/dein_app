@@ -10,6 +10,8 @@ abstract class Routes {
   static const SETUP_PROFILE = _Paths.SETUP_PROFILE;
   static const PRE_AUTH = _Paths.PRE_AUTH;
   static const USER_DETAILS = _Paths.USER_DETAILS;
+  static const MESSAGE = _Paths.MESSAGE;
+  static const VIDEO_CALL = _Paths.VIDEO_CALL;
 }
 
 abstract class _Paths {
@@ -21,4 +23,6 @@ abstract class _Paths {
   static const SETUP_PROFILE = '/setup-profile';
   static const PRE_AUTH = '/pre-auth';
   static const USER_DETAILS = '/user-details';
+  static const MESSAGE = '/message';
+  static const VIDEO_CALL = '/video-call';
 }

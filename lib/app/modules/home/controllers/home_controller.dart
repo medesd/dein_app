@@ -1,17 +1,17 @@
 import 'package:appinio_swiper/appinio_swiper.dart';
-import 'package:dein_app/app/data_controller.dart';
-import 'package:dein_app/app/modules/home/views/message_view/message_view.dart';
+import 'package:dein_app/app/modules/home/views/message_view/message_home_view.dart';
 import 'package:dein_app/app/modules/home/views/setting_view/setting_view.dart';
-import 'package:dein_app/app/user_parser.dart';
+import 'package:dein_app/app/data/user_parser.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
+import '../../../data/data_controller.dart';
 import '../views/home_view/search_view.dart';
 
 class HomeController extends GetxController {
   var navigationIndex = 0.obs;
   var pageController = PageController(initialPage: 0);
-  var tabs = [const SearchView(), const MessageView(), const SettingView()];
+  var tabs = [const SearchView(), const MessageHomeView(), const SettingView()];
   var searchMode = 0.obs;
   var keyword = "".obs;
   var searchItems = <UserParser>[].obs;
