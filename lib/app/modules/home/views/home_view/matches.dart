@@ -5,7 +5,6 @@ import 'package:dein_app/app/widgets/d_textfield.dart';
 import 'package:dein_app/res/assets_res.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../routes/app_pages.dart';
@@ -15,11 +14,10 @@ class Matches extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    var dataController = Get.put(DataController());
-    var selectedUser = dataController.users
+    var selectedUser = DataController.users
         .where((element) => element.id == controller.touchedUser.value)
         .first;
-    var filteredUsers = dataController.users
+    var filteredUsers = DataController.users
         .where((element) => element.id != selectedUser.id)
         .toList();
     filteredUsers.insert(0, selectedUser);
@@ -108,7 +106,7 @@ class Matches extends GetView<HomeController> {
                                             child: DropdownButton<String>(
                                               elevation: 0,
                                               underline: Container(),
-                                              items: dataController.filterTypes
+                                              items: DataController.filterTypes
                                                   .map((e) =>
                                                       DropdownMenuItem<String>(
                                                         value:
@@ -120,9 +118,9 @@ class Matches extends GetView<HomeController> {
                                               isExpanded: true,
                                               icon: const Icon(Icons
                                                   .keyboard_arrow_down_outlined),
-                                              value: dataController
+                                              value: DataController
                                                   .selectedFilterType.value,
-                                              onChanged: (val) => dataController
+                                              onChanged: (val) => DataController
                                                   .selectedFilterType(val),
                                             ),
                                           ),
@@ -131,18 +129,15 @@ class Matches extends GetView<HomeController> {
                                                 EdgeInsets.only(right: 3.w),
                                             child: Obx(
                                               () {
-                                                switch (dataController
+                                                switch (DataController
                                                     .selectedFilterType.value) {
                                                   case "doctor":
-                                                    return doctorFilter(
-                                                        dataController);
+                                                    return doctorFilter();
                                                   case "software_developer":
-                                                    return softwareDeveloperFilter(
-                                                        dataController);
+                                                    return softwareDeveloperFilter();
 
                                                   case "carpenter":
-                                                    return carpenterFilter(
-                                                        dataController);
+                                                    return carpenterFilter();
                                                   default:
                                                     return const Placeholder();
                                                 }
@@ -216,12 +211,17 @@ class Matches extends GetView<HomeController> {
           SizedBox(
             height: 80.h,
             child: AppinioSwiper(
-                controller: controller.swipeController,
-                cardsCount: filteredUsers.length,
-                loop: true,
-                cardsBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.all(8.sp),
+              controller: controller.swipeController,
+              cardsCount: filteredUsers.length,
+              loop: true,
+              cardsBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.all(8.sp),
+                  child: GestureDetector(
+                    onTap: (){
+                      Get.toNamed(Routes.USER_DETAILS,
+                          arguments: filteredUsers[index].id!);
+                    },
                     child: Container(
                       height: 73.h,
                       width: 100.w,
@@ -304,6 +304,13 @@ class Matches extends GetView<HomeController> {
                                 InkWell(
                                   onTap: () {
                                     controller.swipeController.swipeRight();
+                                    if (DataController.matches
+                                        .where((p0) =>
+                                            p0.id == filteredUsers[index].id)
+                                        .isEmpty) {
+                                      DataController.matches
+                                          .add(filteredUsers[index]);
+                                    }
                                   },
                                   child: Image.asset(
                                     AssetsRes.HEART_CIRCLE,
@@ -319,8 +326,10 @@ class Matches extends GetView<HomeController> {
                         ),
                       ),
                     ),
-                  );
-                }),
+                  ),
+                );
+              },
+            ),
           ),
           SizedBox(
             height: 5.h,
@@ -331,7 +340,7 @@ class Matches extends GetView<HomeController> {
   }
 }
 
-Widget doctorFilter(DataController dataController) {
+Widget doctorFilter() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -350,7 +359,7 @@ Widget doctorFilter(DataController dataController) {
             ),
           ),
           Text(
-            "${dataController.doctorExpSlider.value.toInt()}+ years",
+            "${DataController.doctorExpSlider.value.toInt()}+ years",
             style: TextStyle(
               color: const Color(0xFF9c9dac),
               fontSize: 12.sp,
@@ -371,8 +380,8 @@ Widget doctorFilter(DataController dataController) {
           inactiveColor: const Color(0xffeaeaea),
           min: 0,
           activeColor: const Color(0xff5666d8),
-          value: dataController.doctorExpSlider.value,
-          onChanged: (val) => dataController.doctorExpSlider(val),
+          value: DataController.doctorExpSlider.value,
+          onChanged: (val) => DataController.doctorExpSlider(val),
         ),
       ),
       SizedBox(
@@ -391,9 +400,9 @@ Widget doctorFilter(DataController dataController) {
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: (dataController.filterTypes
+        children: (DataController.filterTypes
                 .where((element) =>
-                    element["type"] == dataController.selectedFilterType.value)
+                    element["type"] == DataController.selectedFilterType.value)
                 .first["language"]! as List<String>)
             .map(
               (e) => Container(
@@ -420,7 +429,7 @@ Widget doctorFilter(DataController dataController) {
   );
 }
 
-Widget softwareDeveloperFilter(DataController dataController) {
+Widget softwareDeveloperFilter() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -439,7 +448,7 @@ Widget softwareDeveloperFilter(DataController dataController) {
             ),
           ),
           Text(
-            "${dataController.softWorkSlider.value.start.toInt()} - ${dataController.softWorkSlider.value.end.toInt()}%",
+            "${DataController.softWorkSlider.value.start.toInt()} - ${DataController.softWorkSlider.value.end.toInt()}%",
             style: TextStyle(
               color: const Color(0xFF9c9dac),
               fontSize: 12.sp,
@@ -461,8 +470,8 @@ Widget softwareDeveloperFilter(DataController dataController) {
           max: 100,
           inactiveColor: const Color(0xffeaeaea),
           min: 0,
-          onChanged: (val) => dataController.softWorkSlider(val),
-          values: dataController.softWorkSlider.value,
+          onChanged: (val) => DataController.softWorkSlider(val),
+          values: DataController.softWorkSlider.value,
         ),
       ),
       SizedBox(
@@ -481,9 +490,9 @@ Widget softwareDeveloperFilter(DataController dataController) {
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: (dataController.filterTypes
+        children: (DataController.filterTypes
                 .where((element) =>
-                    element["type"] == dataController.selectedFilterType.value)
+                    element["type"] == DataController.selectedFilterType.value)
                 .first["language"]! as List<String>)
             .map(
               (e) => Container(
@@ -528,10 +537,10 @@ Widget softwareDeveloperFilter(DataController dataController) {
         child: DropdownButton<String>(
           elevation: 0,
           underline: Container(),
-          items: (dataController.filterTypes
+          items: (DataController.filterTypes
                   .where((element) =>
                       element["type"] ==
-                      dataController.selectedFilterType.value)
+                      DataController.selectedFilterType.value)
                   .first["employment_type"] as List<String>)
               .map(
                 (e) => DropdownMenuItem<String>(
@@ -542,8 +551,8 @@ Widget softwareDeveloperFilter(DataController dataController) {
               .toList(),
           isExpanded: true,
           icon: const Icon(Icons.keyboard_arrow_down_outlined),
-          value: dataController.softEmpType.value,
-          onChanged: (val) => dataController.softEmpType(val),
+          value: DataController.softEmpType.value,
+          onChanged: (val) => DataController.softEmpType(val),
         ),
       ),
       SizedBox(
@@ -562,9 +571,9 @@ Widget softwareDeveloperFilter(DataController dataController) {
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: (dataController.filterTypes
+        children: (DataController.filterTypes
                 .where((element) =>
-                    element["type"] == dataController.selectedFilterType.value)
+                    element["type"] == DataController.selectedFilterType.value)
                 .first["company_size"]! as List<String>)
             .map(
               (e) => Container(
@@ -621,7 +630,7 @@ Widget softwareDeveloperFilter(DataController dataController) {
   );
 }
 
-Widget carpenterFilter(DataController dataController) {
+Widget carpenterFilter() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -650,10 +659,10 @@ Widget carpenterFilter(DataController dataController) {
         child: DropdownButton<String>(
           elevation: 0,
           underline: Container(),
-          items: (dataController.filterTypes
+          items: (DataController.filterTypes
                   .where((element) =>
                       element["type"] ==
-                      dataController.selectedFilterType.value)
+                      DataController.selectedFilterType.value)
                   .first["branch"] as List<String>)
               .map(
                 (e) => DropdownMenuItem<String>(
@@ -664,8 +673,8 @@ Widget carpenterFilter(DataController dataController) {
               .toList(),
           isExpanded: true,
           icon: const Icon(Icons.keyboard_arrow_down_outlined),
-          value: dataController.carpenterBranch.value,
-          onChanged: (val) => dataController.carpenterBranch(val),
+          value: DataController.carpenterBranch.value,
+          onChanged: (val) => DataController.carpenterBranch(val),
         ),
       ),
       SizedBox(
@@ -693,22 +702,22 @@ Widget carpenterFilter(DataController dataController) {
         child: DropdownButton<String>(
           elevation: 0,
           underline: Container(),
-          items: (dataController.filterTypes
-              .where((element) =>
-          element["type"] ==
-              dataController.selectedFilterType.value)
-              .first["canton"] as List<String>)
+          items: (DataController.filterTypes
+                  .where((element) =>
+                      element["type"] ==
+                      DataController.selectedFilterType.value)
+                  .first["canton"] as List<String>)
               .map(
                 (e) => DropdownMenuItem<String>(
-              value: e,
-              child: Text(e),
-            ),
-          )
+                  value: e,
+                  child: Text(e),
+                ),
+              )
               .toList(),
           isExpanded: true,
           icon: const Icon(Icons.keyboard_arrow_down_outlined),
-          value: dataController.carpenterCanton.value,
-          onChanged: (val) => dataController.carpenterCanton(val),
+          value: DataController.carpenterCanton.value,
+          onChanged: (val) => DataController.carpenterCanton(val),
         ),
       ),
       SizedBox(
@@ -736,10 +745,10 @@ Widget carpenterFilter(DataController dataController) {
         child: DropdownButton<String>(
           elevation: 0,
           underline: Container(),
-          items: (dataController.filterTypes
+          items: (DataController.filterTypes
                   .where((element) =>
                       element["type"] ==
-                      dataController.selectedFilterType.value)
+                      DataController.selectedFilterType.value)
                   .first["employment_type"] as List<String>)
               .map(
                 (e) => DropdownMenuItem<String>(
@@ -750,8 +759,8 @@ Widget carpenterFilter(DataController dataController) {
               .toList(),
           isExpanded: true,
           icon: const Icon(Icons.keyboard_arrow_down_outlined),
-          value: dataController.softEmpType.value,
-          onChanged: (val) => dataController.softEmpType(val),
+          value: DataController.softEmpType.value,
+          onChanged: (val) => DataController.softEmpType(val),
         ),
       ),
       SizedBox(
@@ -770,9 +779,9 @@ Widget carpenterFilter(DataController dataController) {
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: (dataController.filterTypes
+        children: (DataController.filterTypes
                 .where((element) =>
-                    element["type"] == dataController.selectedFilterType.value)
+                    element["type"] == DataController.selectedFilterType.value)
                 .first["language"]! as List<String>)
             .map(
               (e) => Container(

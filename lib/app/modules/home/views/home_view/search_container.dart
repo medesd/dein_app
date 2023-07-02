@@ -84,6 +84,9 @@ class SearchContainer extends GetView<HomeController> {
             controller.searchMode(1);
           },
         ),
+        SizedBox(
+          height: 4.h,
+        ),
       ],
     );
   }

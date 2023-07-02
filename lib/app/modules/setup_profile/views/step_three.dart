@@ -14,7 +14,6 @@ class StepThree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var controller=Get.put(DataController());
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,13 +26,13 @@ class StepThree extends StatelessWidget {
               fontSize: 13.sp),
         ),
         SizedBox(height: 3.h,),
-        Row(children: [
-          PhotoCard(image:controller.avatar),
+        Obx(()=>Row(children: [
+          PhotoCard(image:DataController.avatar.value),
           SizedBox(width: 1.w,),
           const EmptyPhotoCard(),
           SizedBox(width: 1.w,),
           const EmptyPhotoCard(),
-        ],),
+        ],)),
 
         SizedBox(height: 3.h,),
         Text(
@@ -44,10 +43,11 @@ class StepThree extends StatelessWidget {
               fontSize: 13.sp),
         ),
         SizedBox(height: 4.h),
-        const DTextField(
+        DTextField(
           area: true,
           withBorder: true,
           placeHolder: "About me",
+          onChanged: (val)=>DataController.userAbout(val),
         ),
         SizedBox(height: 3.h,),
         Text(
@@ -58,10 +58,11 @@ class StepThree extends StatelessWidget {
               fontSize: 13.sp),
         ),
         SizedBox(height: 3.h),
-        const DTextField(
+        DTextField(
           withShadow: false,
           withBorder: true,
           placeHolder: "Location",
+          onChanged: (val)=> DataController.userLocation(val),
         ),
       ],
     );

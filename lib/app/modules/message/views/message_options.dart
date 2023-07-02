@@ -1,3 +1,5 @@
+import 'package:dein_app/app/data/data_controller.dart';
+import 'package:dein_app/app/data/schedule_parser.dart';
 import 'package:dein_app/app/routes/app_pages.dart';
 import 'package:dein_app/res/assets_res.dart';
 import 'package:flutter/material.dart';
@@ -74,6 +76,15 @@ class MessageOptions extends StatelessWidget {
                             AssetsRes.CALENDAR,
                             scale: 3.sp,
                           ),
+                          onTap: (){
+                            DataController.userSchedule.add(
+                              ScheduleParser(
+                                  user: Get.arguments,
+                                  date: DateTime.now(),
+                                  type: ScheduleType.Calendar),
+                            );
+                              Get.back();
+                          },
                           minLeadingWidth: 2.w,
                           title: Text("Schedule appointment"),
                         ),
@@ -94,7 +105,14 @@ class MessageOptions extends StatelessWidget {
                           ),
                           minLeadingWidth: 2.w,
                           onTap: () {
+                            DataController.userSchedule.add(
+                              ScheduleParser(
+                                  user: Get.arguments,
+                                  date: DateTime.now(),
+                                  type: ScheduleType.Call),
+                            );
                             Get.toNamed(Routes.VIDEO_CALL);
+
                           },
                           title: Text("Schedule video call"),
                         ),

@@ -63,6 +63,7 @@ class PreAuthView extends GetView<PreAuthController> {
             ),
             DButton(
               text: "Register with Email",
+              onPress: ()=>Get.toNamed(Routes.AUTH),
               color: Colors.white,
               textColor: Color(0xff292c57),
               icon: Padding(

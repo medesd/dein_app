@@ -65,14 +65,14 @@ class StepOne extends StatelessWidget {
                 color: const Color(0xffecebeb),
                 borderRadius: BorderRadius.circular(10.sp),
               ),
-              child: dataController.document.isEmpty
+              child: DataController.document.isEmpty
                   ? Align(
                       child: Image.asset(
                         AssetsRes.CAMERA,
                         scale: 4.sp,
                       ),
                     )
-                  : Image.file(File(dataController.document.value),
+                  : Image.file(File(DataController.document.value),
                       fit: BoxFit.contain),
             ),
           ),
@@ -112,14 +112,14 @@ class StepOne extends StatelessWidget {
                 color: const Color(0xffecebeb),
                 borderRadius: BorderRadius.circular(10.sp),
               ),
-              child: dataController.avatar.isEmpty
+              child: DataController.avatar.isEmpty
                   ? Align(
                       child: Image.asset(
                         AssetsRes.CAMERA,
                         scale: 4.sp,
                       ),
                     )
-                  : Image.file(File(dataController.avatar.value),fit: BoxFit.contain,),
+                  : Image.file(File(DataController.avatar.value),fit: BoxFit.contain,),
             ),
           ),
         ),

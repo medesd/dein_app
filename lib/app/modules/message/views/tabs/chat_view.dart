@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../../data/data_controller.dart';
 import '../../controllers/message_controller.dart';
 
 class ChatView extends GetView<MessageController> {
@@ -18,7 +19,7 @@ class ChatView extends GetView<MessageController> {
             controller: controller.messageController,
             physics: const AlwaysScrollableScrollPhysics(),
             child: Column(
-              children: controller.dataController.messages
+              children: DataController.messages
                   .where((element) =>
                       element.user == controller.user.id)
                   .map((e) => Column(

@@ -11,7 +11,6 @@ class StepFive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dataController = Get.put(DataController());
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.end,
@@ -33,7 +32,7 @@ class StepFive extends StatelessWidget {
           withBorder: true,
           onChanged: (val) {
             if (val.isEmpty) return;
-            dataController.name(val);
+            DataController.name(val);
           },
         ),
         SizedBox(
@@ -74,7 +73,7 @@ class StepFive extends StatelessWidget {
             ),
             selectedDate: DateTime.now(),
             onDateTimeChanged: (date) {
-              dataController.birthday(date);
+             DataController.birthday(date);
             },
           ),
         ),

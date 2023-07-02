@@ -62,7 +62,7 @@ class _StepSixState extends State<StepSix> {
         Obx(() => Wrap(
               spacing: 2.w,
               runSpacing: 1.h,
-              children: controller.dataController.skills
+              children: DataController.skills
                   .asMap()
                   .map((key, element) => MapEntry(
                       key,

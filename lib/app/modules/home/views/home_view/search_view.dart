@@ -4,8 +4,6 @@ import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/modules/home/controllers/home_controller.dart';
 import 'package:dein_app/app/modules/home/views/home_view/matches.dart';
 import 'package:dein_app/app/modules/home/views/home_view/search_container.dart';
-import 'package:dein_app/app/widgets/d_button.dart';
-import 'package:dein_app/app/widgets/d_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -18,9 +16,9 @@ class SearchView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    var dataController = Get.put(DataController());
     return Obx(
-      () => SingleChildScrollView(
+      () {
+        return SingleChildScrollView(
         physics: controller.touchedUser.value != 0
             ? const NeverScrollableScrollPhysics()
             : const AlwaysScrollableScrollPhysics(),
@@ -37,12 +35,19 @@ class SearchView extends GetView<HomeController> {
                       alignment: Alignment.centerRight,
                       child: CircleAvatar(
                         backgroundColor: Colors.transparent,
-                        child: Obx(
-                          () => dataController.avatar.isEmpty
-                              ? Image.asset(AssetsRes.AVATAR)
-                              : Image.file(
-                                  File(dataController.avatar.value),
-                                ),
+                        radius: 25.sp,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50.sp),
+                          child: Obx(
+                            () => DataController.avatar.isEmpty
+                                ? Image.asset(AssetsRes.AVATAR)
+                                : Image.file(
+                                    File(DataController.avatar.value),
+                              width: 40.w,
+                              height: 40.w,
+                              fit: BoxFit.cover,
+                                  ),
+                          ),
                         ),
                       ),
                     ),
@@ -51,7 +56,7 @@ class SearchView extends GetView<HomeController> {
                     padding: EdgeInsets.symmetric(horizontal: 5.w),
                     child: Obx(
                       () => Text(
-                        "Good morning,\n${dataController.name.value.isNotEmpty ? dataController.name.value : "David"}.",
+                        "Good morning,\n${DataController.name.value.isNotEmpty ? DataController.name.value : "David"}.",
                         style: TextStyle(
                             color: const Color(0xff292c57),
                             fontSize: 20.sp,
@@ -80,7 +85,8 @@ class SearchView extends GetView<HomeController> {
                 ],
               )
             : const Matches(),
-      ),
+      );
+      },
     );
   }
 }

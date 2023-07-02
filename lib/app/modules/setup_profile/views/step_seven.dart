@@ -1,6 +1,10 @@
+import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/widgets/d_button.dart';
 import 'package:dein_app/res/assets_res.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
 class StepSeven extends StatelessWidget {
@@ -54,7 +58,9 @@ class StepSeven extends StatelessWidget {
             thickness: 1.5,
           ),
         ),
-        SizedBox(height: 3.h,),
+        SizedBox(
+          height: 3.h,
+        ),
         Text(
           "Documents",
           style: TextStyle(
@@ -63,12 +69,22 @@ class StepSeven extends StatelessWidget {
             color: const Color(0xFF292c57),
           ),
         ),
-        SizedBox(height: 4.h,),
+        SizedBox(
+          height: 4.h,
+        ),
         ListTile(
           leading: Image.asset(
             AssetsRes.PLUS,
             scale: 5,
           ),
+          onTap: () async {
+            FilePickerResult? result = await FilePicker.platform.pickFiles(
+              allowedExtensions: ['jpg', 'pdf', 'doc', 'png'],
+              type: FileType.custom,
+            );
+            if(result==null) return;
+            DataController.documentList.add(result.files.single.path);
+          },
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
           minLeadingWidth: 5.w,
@@ -77,6 +93,27 @@ class StepSeven extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
+        Obx(
+          () => Column(
+            children: DataController.documentList
+                .map(
+                  (element) => ListTile(
+                    minVerticalPadding: 0,
+                    dense: true,
+                    visualDensity: VisualDensity.compact,
+                    contentPadding: EdgeInsets.zero,
+                    leading:Image.asset(AssetsRes.DOCUMENT,scale: 4.sp,),
+                    minLeadingWidth: 2.w,
+                    title: FittedBox(
+                      alignment: Alignment.centerLeft,
+                      fit: BoxFit.scaleDown,
+                      child: Text(element!.split("/").last),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+        )
       ],
     );
   }

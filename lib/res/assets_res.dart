@@ -17,6 +17,7 @@ class AssetsRes {
   static const String CLOSE = 'assets/icons/close.png';
   static const String CLOSE_CIRCLE = 'assets/icons/close_circle.PNG';
   static const String CLOSE_FILLED = 'assets/icons/close_filled.PNG';
+  static const String DOCUMENT = 'assets/icons/document.PNG';
   static const String EDIT = 'assets/icons/edit.PNG';
   static const String EMAIL = 'assets/icons/email.PNG';
   static const String FACTORY = 'assets/icons/factory.png';

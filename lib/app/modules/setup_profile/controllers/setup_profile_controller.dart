@@ -8,7 +8,6 @@ class SetupProfileController extends GetxController {
   var pageIndex = 0.obs;
   final PageController controller = PageController(initialPage: 0);
   final ImagePicker picker = ImagePicker();
-  var dataController = Get.put(DataController());
 
   var appBarText = [
     "Your profile",
@@ -28,8 +27,8 @@ class SetupProfileController extends GetxController {
       Get.offAllNamed(Routes.HOME);
     }
 
-    if (dataController.avatar.isEmpty &&
-        dataController.document.isEmpty &&
+    if (DataController.avatar.isEmpty &&
+        DataController.document.isEmpty &&
         pageIndex.value == 0) {
       Get.showSnackbar(const GetSnackBar(
         animationDuration: Duration(seconds: 2),
@@ -46,25 +45,25 @@ class SetupProfileController extends GetxController {
   Future<void> pickDocument() async {
     final XFile? photo = await picker.pickImage(source: ImageSource.gallery);
     if (photo != null) {
-      dataController.document(photo.path);
+      DataController.document(photo.path);
     }
   }
 
   Future<void> pickSelfie() async {
     final XFile? photo = await picker.pickImage(source: ImageSource.camera);
     if (photo != null) {
-      dataController.avatar(photo.path);
+      DataController.avatar(photo.path);
     }
   }
 
   void addSkill(String skill) {
-    if (dataController.skills.contains(skill)) return;
-    dataController.skills.add(skill);
-    dataController.skills.refresh();
+    if (DataController.skills.contains(skill)) return;
+    DataController.skills.add(skill);
+    DataController.skills.refresh();
   }
 
   void removeSkill(int index) {
-    dataController.skills.removeAt(index);
-    dataController.skills.refresh();
+    DataController.skills.removeAt(index);
+    DataController.skills.refresh();
   }
 }

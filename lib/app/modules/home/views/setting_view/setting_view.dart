@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dein_app/app/data/data_controller.dart';
+import 'package:dein_app/app/routes/app_pages.dart';
 import 'package:dein_app/res/assets_res.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,7 +12,6 @@ class SettingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dataController = Get.put(DataController());
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Column(
@@ -22,10 +22,10 @@ class SettingView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Align(
+               /* const Align(
                   alignment: Alignment.centerRight,
                   child: Icon(Icons.more_vert),
-                ),
+                ),*/
                 SizedBox(
                   height: 2.h,
                 ),
@@ -36,10 +36,15 @@ class SettingView extends StatelessWidget {
                       CircleAvatar(
                         backgroundColor: const Color(0xffe6e6e6),
                         radius: 26.sp,
-                        child: dataController.avatar.isNotEmpty
-                            ? Image.file(File(dataController.avatar.value))
-                            : Image.asset(AssetsRes.AVATAR),
-                      ),
+                        child:ClipRRect(borderRadius: BorderRadius.circular(50.sp),child: DataController.avatar.isEmpty
+                            ? Image.asset(AssetsRes.AVATAR)
+                            : Image.file(
+                          File(DataController.avatar.value),
+                          width: 40.w,
+                          height: 40.w,
+                          fit: BoxFit.cover,
+                        ),
+                      )),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -59,7 +64,7 @@ class SettingView extends StatelessWidget {
                 ),
                 Obx(
                   () => Text(
-                    dataController.name.value,
+                    DataController.name.value,
                     style:
                         TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
                   ),
@@ -81,28 +86,36 @@ class SettingView extends StatelessWidget {
                   decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(8.sp)),
                   child: Column(
                     children: [
-                      const ListTile(
+                      ListTile(
                         title: Text("Edit profile"),
                         minLeadingWidth: 0,
-                        leading: Icon(Icons.pan_tool_alt),
+                        onTap: ()=>Get.toNamed(Routes.EDIT_PROFILE),
+                        leading: Image.asset(AssetsRes.EDIT,scale: 2.5.sp,color: Color(0xff5666d8),),
                       ),
                       Divider(endIndent: 5.w,indent: 5.w,height: 0),
-                      const ListTile(
+                      ListTile(
                         title: Text("App settings"),
                         minLeadingWidth: 0,
-                        leading: Icon(Icons.settings),
+                        leading: Image.asset(AssetsRes.APP_SETTINGS,scale: 3.sp,color: Color(0xff5666d8),),
                       ),
                       Divider(endIndent: 5.w,indent: 5.w,height: 0),
-                      const ListTile(
+                      ListTile(
                         title: Text("Notifications"),
                         minLeadingWidth: 0,
-                        leading: Icon(Icons.notification_important),
+                       leading: Image.asset(AssetsRes.NOTIFICATION,scale: 3.sp,color: Color(0xff5666d8),),
                       ),
                     ],
                   ),
                 ),
                 SizedBox(height: 5.h,),
-                Text("Send feedback",style: TextStyle(fontSize: 12.sp),),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text("Send feedback",style: TextStyle(fontSize: 12.sp),),
+                    SizedBox(width: 1.w,),
+                    Image.asset(AssetsRes.TO,scale: 3.sp,),
+                  ],
+                ),
                 SizedBox(height: 2.h,),
                 Text("About us",style: TextStyle(fontSize: 12.sp),),
                 SizedBox(height: 2.h,),

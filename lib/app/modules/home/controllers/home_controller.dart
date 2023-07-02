@@ -15,7 +15,6 @@ class HomeController extends GetxController {
   var searchMode = 0.obs;
   var keyword = "".obs;
   var searchItems = <UserParser>[].obs;
-  var dataController = Get.put(DataController());
   var touchedUser = 0.obs;
 
   var searchController = TextEditingController();
@@ -31,7 +30,7 @@ class HomeController extends GetxController {
     });
 
     keyword.listen((p0) {
-      searchItems.value = dataController.users
+      searchItems.value = DataController.users
           .where((element) => element
               .toString()
               .toLowerCase()

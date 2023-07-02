@@ -1,3 +1,4 @@
+import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/widgets/d_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -18,15 +19,20 @@ class StepFour extends StatelessWidget {
               color: const Color(0xFF292c57),
               fontSize: 16.sp),
         ),
-        SizedBox(height: 1.h,),
+        SizedBox(
+          height: 1.h,
+        ),
         Text(
           "We will send you an SMS with PIN to\nverify.",
           style: TextStyle(color: const Color(0xff646681), fontSize: 10.sp),
         ),
-        SizedBox(height: 1.h,),
+        SizedBox(
+          height: 1.h,
+        ),
         DTextField(
           placeHolder: "Phone number",
           withShadow: false,
+          onChanged: (val) => DataController.userPhoneNumber(val),
           withBorder: true,
           suffix: Padding(
             padding: EdgeInsets.only(top: 1.h, bottom: 1.h, right: 1.h),
@@ -74,7 +80,9 @@ class StepFour extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 2.h,),
+        SizedBox(
+          height: 2.h,
+        ),
         const DTextField(
           placeHolder: "PIN",
           withShadow: false,

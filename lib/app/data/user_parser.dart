@@ -44,7 +44,7 @@ class UserParser {
 
   @override
   String toString() {
-    return '$location $about $mission $requirements $locationJob $typeJob $workload $agentName $agentLocation $isJob,  ${services?.join(" ")}'
+    return '$name $location $about $mission $requirements $locationJob $typeJob $workload $agentName $agentLocation $isJob,  ${services?.join(" ")}'
         .replaceAll(" ", "_");
   }
 

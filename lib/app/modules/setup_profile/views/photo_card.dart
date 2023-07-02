@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class PhotoCard extends StatelessWidget {
-  final RxString image;
+  final String image;
 
   const PhotoCard({super.key, required this.image});
 
@@ -20,9 +20,12 @@ class PhotoCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: const Color(0xffe7e8e8),
             borderRadius: BorderRadius.circular(10.sp),
-            image: DecorationImage(
+            image: image.isEmpty?const DecorationImage(
+              fit: BoxFit.fitWidth,
+              image: AssetImage(AssetsRes.AVATAR),
+            ):DecorationImage(
               fit: BoxFit.cover,
-              image: FileImage(File(image.value)),
+              image: FileImage(File(image)),
             ),
           ),
         ),

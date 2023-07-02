@@ -66,6 +66,7 @@ class AuthView extends GetView<AuthController> {
               DTextField(
                 placeHolder: "Email Address",
                 controller: controller.email,
+                defaultValue: "example@example.com",
               ),
               SizedBox(
                 height: 3.h,
@@ -73,6 +74,8 @@ class AuthView extends GetView<AuthController> {
               DTextField(
                 placeHolder: "Password",
                 controller: controller.password,
+                hidden: true,
+                defaultValue: "12345678",
               ),
               SizedBox(
                 height: 4.h,

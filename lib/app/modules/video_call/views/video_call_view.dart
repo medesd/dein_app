@@ -1,9 +1,11 @@
 import 'package:dein_app/app/data/data_controller.dart';
+import 'package:dein_app/app/modules/video_call/views/record_video_popup.dart';
 import 'package:dein_app/res/assets_res.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:stop_watch_timer/stop_watch_timer.dart';
 
 import '../controllers/video_call_controller.dart';
 import 'camera_preview.dart';
@@ -13,8 +15,7 @@ class VideoCallView extends GetView<VideoCallController> {
 
   @override
   Widget build(BuildContext context) {
-    var dataController = Get.put(DataController());
-    var user = dataController.users.first;
+    var user = DataController.users.first;
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -39,20 +40,47 @@ class VideoCallView extends GetView<VideoCallController> {
                           borderRadius: BorderRadius.circular(15.sp),
                           color: const Color(0xff6c6c6c),
                         ),
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.red,
-                              radius: 5.sp,
-                            ),
-                            SizedBox(
-                              width: 1.w,
-                            ),
-                            const Text(
-                              "Record video",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
+                        child: GestureDetector(
+                          onTap: () {
+                            if (controller.recordingStarted.value) {
+                              controller.stopRecord();
+                            } else {
+                              Get.dialog(
+                                const RecordVideoPopup(),
+                                useSafeArea: true,
+                              );
+                            }
+                          },
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.red,
+                                radius: 5.sp,
+                              ),
+                              SizedBox(
+                                width: 1.w,
+                              ),
+                              StreamBuilder<int>(
+                                initialData: 0,
+                                stream: controller.stopWatchTimer.rawTime,
+                                builder: (context, snp) {
+                                  final value = snp.data;
+                                  final displayTime =
+                                      StopWatchTimer.getDisplayTime(value!,
+                                          hours: false, milliSecond: false);
+                                  return Obx(
+                                    () => Text(
+                                      controller.recordingStarted.value
+                                          ? displayTime
+                                          : "Record video",
+                                      style:
+                                          const TextStyle(color: Colors.white),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       Stack(
@@ -74,7 +102,10 @@ class VideoCallView extends GetView<VideoCallController> {
                                     child: Obx(
                                       () => !controller.toggleVideo.value
                                           ? CallCameraPreview(
-                                              cameraOption: CameraOption.Front,
+                                              cameraOption:
+                                                  controller.switchCamera.value
+                                                      ? CameraOption.Front
+                                                      : CameraOption.Back,
                                               onCapture: (file) => {},
                                             )
                                           : Center(
@@ -89,12 +120,21 @@ class VideoCallView extends GetView<VideoCallController> {
                               ],
                             ),
                           ),
-                          CircleAvatar(
-                            backgroundColor: const Color(0xff5666d8),
-                            radius: 14.sp,
-                            child: Image.asset(
-                              AssetsRes.REFRESH,
-                              scale: 3.sp,
+                          GestureDetector(
+                            onTap: () {
+                              controller.switchCamera.toggle();
+                              controller.toggleVideo.toggle();
+                              Future.delayed(const Duration(milliseconds: 250))
+                                  .then((value) =>
+                                      controller.toggleVideo.toggle());
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: const Color(0xff5666d8),
+                              radius: 14.sp,
+                              child: Image.asset(
+                                AssetsRes.REFRESH,
+                                scale: 3.sp,
+                              ),
                             ),
                           ),
                         ],
@@ -158,7 +198,7 @@ class VideoCallView extends GetView<VideoCallController> {
                             width: 3.w,
                           ),
                           GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               Get.back();
                             },
                             child: CircleAvatar(
@@ -207,16 +247,37 @@ class VideoCallView extends GetView<VideoCallController> {
                       SizedBox(
                         height: 2.h,
                       ),
-                      Text(
-                        "Swipe up to show the chat",
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          color: Colors.white,
-                          shadows: const [
-                            Shadow(color: Colors.black, blurRadius: 1),
-                          ],
-                        ),
-                      ),
+                      Obx(
+                        () => controller.callStarted.value
+                            ? StreamBuilder<int>(
+                                initialData: 0,
+                                stream: controller.callStopWatchTimer.rawTime,
+                                builder: (context, snp) {
+                                  final value = snp.data;
+                                  final displayTime =
+                                  StopWatchTimer.getDisplayTime(value!,
+                                      hours: false, milliSecond: false);
+                                  return Text(
+                                    displayTime,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      shadows: [
+                                        Shadow(
+                                            color: Colors.black, blurRadius: 1),
+                                      ],
+                                    ),
+                                  );
+                                })
+                            : Text(
+                                controller.videoCallStatus.value,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  shadows: [
+                                    Shadow(color: Colors.black, blurRadius: 1),
+                                  ],
+                                ),
+                              ),
+                      )
                     ],
                   )
                 ],

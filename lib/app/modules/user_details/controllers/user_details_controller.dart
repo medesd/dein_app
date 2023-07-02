@@ -4,12 +4,11 @@ import 'package:get/get.dart';
 
 class UserDetailsController extends GetxController {
   var user = UserParser().obs;
-  var dataController = Get.put(DataController());
 
   @override
   void onInit() {
     super.onInit();
-    user.value = dataController.users
+    user.value = DataController.users
         .where((element) => element.id == Get.arguments)
         .first;
   }

@@ -1,18 +1,25 @@
 import 'package:dein_app/app/data/message_parser.dart';
+import 'package:dein_app/app/data/schedule_parser.dart';
 import 'package:dein_app/app/data/user_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../res/assets_res.dart';
+import 'document_parser.dart';
 
-class DataController extends GetxController {
-  var avatar = "".obs;
-  var name = "medesd".obs;
-  var document = "".obs;
-  var skills = <String>[].obs;
-  var birthday = DateTime.now().obs;
+class DataController {
+  static var avatar = "".obs;
+  static var name = "medesd".obs;
+  static var document = "".obs;
+  static var skills = <String>[].obs;
+  static var birthday = DateTime.now().obs;
+  static var userLocation = "".obs;
+  static var userAbout = "".obs;
+  static var userPhoneNumber = "".obs;
+  static var documentList = <String?>[].obs;
+  static var userDocument = <DocumentParser>[].obs;
+  static var userSchedule=<ScheduleParser>[].obs;
 
-  var users = [
+  static var users = [
     {
       "id": 1,
       "name": "Julien Hirano",
@@ -83,9 +90,9 @@ communication issues
     }
   ].map((e) => UserParser.fromJson(e));
 
-  var selectedFilterType = "doctor".obs;
+  static var selectedFilterType = "doctor".obs;
 
-  var filterTypes = [
+  static var filterTypes = [
     {
       "name": "Doctor",
       "type": "doctor",
@@ -108,13 +115,13 @@ communication issues
     }
   ];
 
-  var doctorExpSlider = 10.0.obs;
-  var softWorkSlider = const RangeValues(20, 60).obs;
-  var softEmpType = "Lehrstellen".obs;
-  var carpenterBranch = "Handwerk".obs;
-  var carpenterCanton = "Zürich".obs;
+  static var doctorExpSlider = 10.0.obs;
+  static var softWorkSlider = const RangeValues(20, 60).obs;
+  static var softEmpType = "Lehrstellen".obs;
+  static var carpenterBranch = "Handwerk".obs;
+  static var carpenterCanton = "Zürich".obs;
 
-  var messages = [
+  static var messages = [
     {
       "date": "2023-07-02",
       "user": 1,
@@ -142,4 +149,6 @@ communication issues
       ]
     },
   ].map((e) => MessageParser.fromJson(e)).toList().obs;
+
+  static var matches = <UserParser>[].obs;
 }

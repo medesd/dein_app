@@ -34,10 +34,13 @@ class MessageView extends GetView<MessageController> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.arrow_back,
-                        size: 20.sp,
-                        color: const Color(0xff292c57),
+                      InkWell(
+                        onTap: () => Get.back(),
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: 20.sp,
+                          color: const Color(0xff292c57),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 1.h),
@@ -47,11 +50,13 @@ class MessageView extends GetView<MessageController> {
                               height: 18.h,
                               width: 25.w,
                               decoration: BoxDecoration(
-                                  color: const Color(0xffb8c0c6),
-                                  borderRadius: BorderRadius.circular(10.sp),
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          controller.user.images!.first))),
+                                color: const Color(0xffb8c0c6),
+                                borderRadius: BorderRadius.circular(10.sp),
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage(controller.user.images!.first),
+                                ),
+                              ),
                             ),
                             SizedBox(
                               height: 2.h,
@@ -99,6 +104,7 @@ class MessageView extends GetView<MessageController> {
                             const MessageOptions(),
                             useSafeArea: true,
                             barrierColor: Colors.transparent,
+                            arguments: controller.user.id
                           );
                         },
                         child: Icon(
@@ -186,14 +192,17 @@ class MessageView extends GetView<MessageController> {
                         child: DTextField(
                           withShadow: false,
                           placeHolder: "Your message",
-                          onSubmit: (val){
+                          onSubmit: (val) {
                             controller.sendMessage(val);
                           },
                         ),
                       ),
-                      Image.asset(
-                        AssetsRes.ATTACH,
-                        scale: 3.sp,
+                      GestureDetector(
+                        onTap: () => controller.pickDocument(),
+                        child: Image.asset(
+                          AssetsRes.ATTACH,
+                          scale: 3.sp,
+                        ),
                       ),
                     ],
                   ),
