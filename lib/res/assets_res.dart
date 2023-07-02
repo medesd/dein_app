@@ -10,6 +10,9 @@ class AssetsRes {
   static const String AVATAR = 'assets/icons/avatar.png';
   static const String BACK = 'assets/icons/back.PNG';
   static const String CALENDAR = 'assets/icons/calendar.PNG';
+  static const String CALL_MIC = 'assets/icons/call_mic.PNG';
+  static const String CALL_PHONE = 'assets/icons/call_phone.PNG';
+  static const String CALL_VIDEO = 'assets/icons/call_video.PNG';
   static const String CAMERA = 'assets/icons/camera.png';
   static const String CLOSE = 'assets/icons/close.png';
   static const String CLOSE_CIRCLE = 'assets/icons/close_circle.PNG';
@@ -30,6 +33,7 @@ class AssetsRes {
   static const String PEN = 'assets/icons/pen.png';
   static const String PLUS = 'assets/icons/plus.png';
   static const String PLUS_FILLED = 'assets/icons/plus_filled.PNG';
+  static const String REFRESH = 'assets/icons/refresh.PNG';
   static const String SEARCH = 'assets/icons/search.png';
   static const String SEARCH_FILLED = 'assets/icons/search_filled.png';
   static const String SETTINGS = 'assets/icons/settings.png';

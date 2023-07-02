@@ -44,7 +44,9 @@ dependencies:
   logger: ^1.4.0
   chat_bubbles: ^1.4.1
   intl: ^0.18.1
-  camerapreview: ^0.0.1
+  camera: ^0.10.5+2
+  ed_screen_recorder: ^0.0.13
+  path_provider: ^2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -104,6 +106,9 @@ flutter:
     - assets/icons/avatar.png
     - assets/icons/back.PNG
     - assets/icons/calendar.PNG
+    - assets/icons/call_mic.PNG
+    - assets/icons/call_phone.PNG
+    - assets/icons/call_video.PNG
     - assets/icons/camera.png
     - assets/icons/close.png
     - assets/icons/close_circle.PNG
@@ -124,6 +129,7 @@ flutter:
     - assets/icons/pen.png
     - assets/icons/plus.png
     - assets/icons/plus_filled.PNG
+    - assets/icons/refresh.PNG
     - assets/icons/search.png
     - assets/icons/search_filled.png
     - assets/icons/settings.png

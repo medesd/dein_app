@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d1d45cb-f61e-44f9-a825-d22419978006" name="Changes" comment="chat_screen">
-      <change afterPath="$PROJECT_DIR$/assets/icons/attach.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/calendar.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/video.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/data/message_parser.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/message/bindings/message_binding.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/message/controllers/message_controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/message/views/message_options.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/message/views/message_view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/message/views/tabs/chat_view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/message/views/tabs/document_view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/message/views/tabs/schedule_view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/video_call/bindings/video_call_binding.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/video_call/controllers/video_call_controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/modules/video_call/views/video_call_view.dart" afterDir="false" />
+    <list default="true" id="1d1d45cb-f61e-44f9-a825-d22419978006" name="Changes" comment="video_call_start">
+      <change afterPath="$PROJECT_DIR$/assets/icons/call_mic.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/call_phone.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/call_video.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/refresh.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/modules/video_call/views/camera_preview.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -33,25 +24,11 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/data_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/data/data_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/matches.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/matches.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/search_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/search_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/message_view/message_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/message_view/message_home_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/setting_view/setting_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/setting_view/setting_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/controllers/setup_profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/controllers/setup_profile_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_five.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_five.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_one.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_one.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_six.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_six.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_three.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_three.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/user_details/controllers/user_details_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/user_details/controllers/user_details_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/routes/app_pages.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/routes/app_pages.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/routes/app_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/routes/app_routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/user_parser.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/data/user_parser.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/widgets/d_textfield.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/widgets/d_textfield.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/video_call/controllers/video_call_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/video_call/controllers/video_call_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/video_call/views/video_call_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/video_call/views/video_call_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/res/assets_res.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/res/assets_res.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -98,8 +75,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\data" />
       <recent name="C:\Users\mohamed\StudioProjects\dein_app\assets\icons" />
+      <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\data" />
       <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\modules\message\views\tabs" />
       <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\modules\home\views\setting_view" />
       <recent name="C:\Users\mohamed\StudioProjects\dein_app\lib\app\modules\home\views\message_view" />
@@ -141,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688246881042</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="video_call_start">
+      <created>1688270266955</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688270266955</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +144,7 @@
     <MESSAGE value="card swiper" />
     <MESSAGE value="settings_screen" />
     <MESSAGE value="chat_screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="chat_screen" />
+    <MESSAGE value="video_call_start" />
+    <option name="LAST_COMMIT_MESSAGE" value="video_call_start" />
   </component>
 </project>
