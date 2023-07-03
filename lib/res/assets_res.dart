@@ -46,6 +46,7 @@ class AssetsRes {
   static const String USER = 'assets/icons/user.png';
   static const String VIDEO = 'assets/icons/video.PNG';
   static const String PRE_AUTH_INTRO = 'assets/images/pre_auth_intro.PNG';
+  static const String SPLASH = 'assets/images/splash.png';
   static const String THANK_YOU = 'assets/images/thank_you.png';
   static const String USER1 = 'assets/images/user1.PNG';
   static const String USER2 = 'assets/images/user2.PNG';

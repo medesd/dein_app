@@ -1,6 +1,7 @@
 import 'package:dein_app/app/widgets/d_button.dart';
 import 'package:dein_app/res/assets_res.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -13,6 +14,7 @@ class ChooseUserView extends GetView<ChooseUserController> {
 
   @override
   Widget build(BuildContext context) {
+    FlutterNativeSplash.remove();
     return Scaffold(
       backgroundColor: const Color(0xfff1f6fd),
       appBar: AppBar(
