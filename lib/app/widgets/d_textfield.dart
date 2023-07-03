@@ -5,7 +5,6 @@ import 'package:sizer/sizer.dart';
 class DTextField extends StatefulWidget {
   final String? placeHolder;
   final String? defaultValue;
-  final TextEditingController? controller;
   final bool area;
   final bool withShadow;
   final bool withBorder;
@@ -18,7 +17,6 @@ class DTextField extends StatefulWidget {
       {super.key,
       this.placeHolder,
       this.area = false,
-      this.controller,
       this.withShadow = true,
       this.withBorder = false,
       this.onChanged,
@@ -37,7 +35,6 @@ class _DTextFieldState extends State<DTextField> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    widget.controller?.value=TextEditingValue(text: widget.defaultValue ?? "");
   }
 
   OutlineInputBorder normalBorder({Color color = Colors.transparent}) {
@@ -69,7 +66,7 @@ class _DTextFieldState extends State<DTextField> {
             autofocus: false,
             onFieldSubmitted: widget.onSubmit,
             maxLength: widget.area ? 250 : null,
-            controller: widget.controller,
+            initialValue: widget.defaultValue,
             obscureText: widget.hidden,
             onChanged: (val) {
               setState(() {

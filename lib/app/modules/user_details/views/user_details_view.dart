@@ -368,7 +368,8 @@ class UserDetailsView extends GetView<UserDetailsController> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
                                           children: [
                                             Text(
                                               controller.user.value.agentName!,
@@ -376,8 +377,13 @@ class UserDetailsView extends GetView<UserDetailsController> {
                                                   color: Color(0xff292c57),
                                                   fontWeight: FontWeight.bold),
                                             ),
-                                            SizedBox(width: 1.w,),
-                                            Image.asset(AssetsRes.TO,scale: 3.sp,),
+                                            SizedBox(
+                                              width: 1.w,
+                                            ),
+                                            Image.asset(
+                                              AssetsRes.TO,
+                                              scale: 3.sp,
+                                            ),
                                           ],
                                         ),
                                         SizedBox(
@@ -429,21 +435,33 @@ class UserDetailsView extends GetView<UserDetailsController> {
                                         DataController.matches
                                             .add(controller.user.value);
                                       }
-                                      Get.toNamed(Routes.MESSAGE,arguments: controller.user.value);
+                                      Get.toNamed(Routes.MESSAGE,
+                                          arguments: controller.user.value);
                                     },
-                                    child: Container(
-                                      padding: EdgeInsets.all(12.sp),
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: const Color(0xff34af63),
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(50.sp)),
-                                      child: Image.asset(
-                                        AssetsRes.HEART_FILLED,
-                                        scale: 2.5.sp,
-                                      ),
-                                    ),
+                                    child: Obx(()=>!DataController.matches
+                                            .where((p0) =>
+                                                p0.id ==
+                                                controller.user.value.id)
+                                            .isEmpty
+                                        ? Container(
+                                            padding: EdgeInsets.all(12.sp),
+                                            decoration: BoxDecoration(
+                                                border: Border.all(
+                                                  color:
+                                                      const Color(0xff34af63),
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        50.sp)),
+                                            child: Image.asset(
+                                              AssetsRes.HEART_FILLED,
+                                              scale: 2.5.sp,
+                                            ),
+                                          )
+                                        : Image.asset(
+                                            AssetsRes.HEART_CIRCLE,
+                                            scale: 3.3.sp,
+                                          )),
                                   ),
                                 ],
                               ),
@@ -455,24 +473,24 @@ class UserDetailsView extends GetView<UserDetailsController> {
                         )
                       ],
                     ),
-                    if(controller.user.value.isJob!)
-                    Positioned(
-                      right: 5.w,
-                      top: 55.h,
-                      child: Container(
-                        height: 50.sp,
-                        width: 50.sp,
-                        padding: EdgeInsets.all(12.sp),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(50.sp)),
-                        child: Image.asset(
-                          AssetsRes.IS_JOB,
-                          scale: 5.sp,
-                          fit: BoxFit.contain,
+                    if (controller.user.value.isJob!)
+                      Positioned(
+                        right: 5.w,
+                        top: 55.h,
+                        child: Container(
+                          height: 50.sp,
+                          width: 50.sp,
+                          padding: EdgeInsets.all(12.sp),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(50.sp)),
+                          child: Image.asset(
+                            AssetsRes.IS_JOB,
+                            scale: 5.sp,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
-                    ),
                   ],
                 ),
               ],

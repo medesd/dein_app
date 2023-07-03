@@ -9,11 +9,21 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../routes/app_pages.dart';
 
-class Matches extends GetView<HomeController> {
+class Matches extends StatefulWidget {
   const Matches({super.key});
 
   @override
+  State<Matches> createState() => _MatchesState();
+}
+
+class _MatchesState extends State<Matches> {
+  var controller=Get.put(HomeController());
+  var swipeController = AppinioSwiperController();
+
+
+  @override
   Widget build(BuildContext context) {
+
     var selectedUser = DataController.users
         .where((element) => element.id == controller.touchedUser.value)
         .first;
@@ -211,14 +221,14 @@ class Matches extends GetView<HomeController> {
           SizedBox(
             height: 80.h,
             child: AppinioSwiper(
-              controller: controller.swipeController,
+              controller: swipeController,
               cardsCount: filteredUsers.length,
               loop: true,
               cardsBuilder: (context, index) {
                 return Padding(
                   padding: EdgeInsets.all(8.sp),
                   child: GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Get.toNamed(Routes.USER_DETAILS,
                           arguments: filteredUsers[index].id!);
                     },
@@ -291,19 +301,19 @@ class Matches extends GetView<HomeController> {
                               children: [
                                 InkWell(
                                   onTap: () {
-                                    controller.swipeController.swipeLeft();
+                                    swipeController.swipeLeft();
                                   },
                                   child: Image.asset(
                                     AssetsRes.CLOSE_CIRCLE,
-                                    scale: 3.sp,
+                                    scale: 3.3.sp,
                                   ),
                                 ),
                                 SizedBox(
                                   width: 3.w,
                                 ),
-                                InkWell(
+                                Obx(()=>InkWell(
                                   onTap: () {
-                                    controller.swipeController.swipeRight();
+                                    swipeController.swipeRight();
                                     if (DataController.matches
                                         .where((p0) =>
                                             p0.id == filteredUsers[index].id)
@@ -312,11 +322,23 @@ class Matches extends GetView<HomeController> {
                                           .add(filteredUsers[index]);
                                     }
                                   },
-                                  child: Image.asset(
+                                  child: DataController.matches.where((p0) => p0.id==filteredUsers[index].id).isEmpty?Image.asset(
                                     AssetsRes.HEART_CIRCLE,
-                                    scale: 3.sp,
+                                    scale: 3.3.sp,
+                                  ):Container(
+                                    padding: EdgeInsets.all(12.sp),
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: const Color(0xff34af63),
+                                        ),
+                                        borderRadius:
+                                        BorderRadius.circular(50.sp)),
+                                    child: Image.asset(
+                                      AssetsRes.HEART_FILLED,
+                                      scale: 2.5.sp,
+                                    ),
                                   ),
-                                ),
+                                )),
                               ],
                             ),
                             SizedBox(

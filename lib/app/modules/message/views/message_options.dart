@@ -1,5 +1,6 @@
 import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/data/schedule_parser.dart';
+import 'package:dein_app/app/data/user_parser.dart';
 import 'package:dein_app/app/routes/app_pages.dart';
 import 'package:dein_app/res/assets_res.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,9 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class MessageOptions extends StatelessWidget {
-  const MessageOptions({super.key});
+  final UserParser user;
+
+  const MessageOptions({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -76,17 +79,75 @@ class MessageOptions extends StatelessWidget {
                             AssetsRes.CALENDAR,
                             scale: 3.sp,
                           ),
-                          onTap: (){
-                            DataController.userSchedule.add(
-                              ScheduleParser(
-                                  user: Get.arguments,
-                                  date: DateTime.now(),
-                                  type: ScheduleType.Calendar),
-                            );
-                              Get.back();
+                          onTap: () async {
+                            Get.back();
+                            var date = await showDatePicker(
+                                context: Get.context!,
+                                builder: (context, child) {
+                                  return Theme(
+                                    data: Theme.of(context).copyWith(
+                                      colorScheme: ColorScheme.light(
+                                        primary: Color(0xff5666d8),
+                                        // <-- SEE HERE
+                                        onPrimary: Colors.white,
+                                        // <-- SEE HERE
+                                        onSurface:
+                                            Color(0xff5666d8), // <-- SEE HERE
+                                      ),
+                                      textButtonTheme: TextButtonThemeData(
+                                        style: TextButton.styleFrom(
+                                          primary: Color(
+                                              0xff5666d8), // button text color
+                                        ),
+                                      ),
+                                    ),
+                                    child: child!,
+                                  );
+                                },
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime.now(),
+                                lastDate: DateTime.now()
+                                    .add(const Duration(days: 10000)));
+
+                            if (date != null) {
+                              var time = await showTimePicker(
+                                  context: Get.context!,
+                                  builder: (context, child) {
+                                    return Theme(
+                                      data: Theme.of(context).copyWith(
+                                        colorScheme: ColorScheme.light(
+                                          primary: Color(0xff5666d8),
+                                          // <-- SEE HERE
+                                          onPrimary: Colors.white,
+                                          // <-- SEE HERE
+                                          onSurface:
+                                          Color(0xff5666d8), // <-- SEE HERE
+                                        ),
+                                        textButtonTheme: TextButtonThemeData(
+                                          style: TextButton.styleFrom(
+                                            primary: Color(
+                                                0xff5666d8), // button text color
+                                          ),
+                                        ),
+                                      ),
+                                      child: child!,
+                                    );
+                                  },
+                                  initialTime: TimeOfDay(
+                                      hour: date.hour, minute: date.minute));
+                              if (time != null) {
+                                DataController.userSchedule.add(
+                                  ScheduleParser(
+                                      user: Get.arguments.id,
+                                      date: date.copyWith(
+                                          hour: time.hour, minute: time.minute),
+                                      type: ScheduleType.Calendar),
+                                );
+                              }
+                            }
                           },
                           minLeadingWidth: 2.w,
-                          title: Text("Schedule appointment"),
+                          title: const Text("Schedule appointment"),
                         ),
                       ),
                       SizedBox(
@@ -111,8 +172,7 @@ class MessageOptions extends StatelessWidget {
                                   date: DateTime.now(),
                                   type: ScheduleType.Call),
                             );
-                            Get.toNamed(Routes.VIDEO_CALL);
-
+                            Get.toNamed(Routes.VIDEO_CALL, arguments: user);
                           },
                           title: Text("Schedule video call"),
                         ),

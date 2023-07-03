@@ -18,14 +18,10 @@ class SettingView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal:5.w,vertical: 3.h),
+            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 3.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-               /* const Align(
-                  alignment: Alignment.centerRight,
-                  child: Icon(Icons.more_vert),
-                ),*/
                 SizedBox(
                   height: 2.h,
                 ),
@@ -34,17 +30,19 @@ class SettingView extends StatelessWidget {
                     alignment: Alignment.bottomRight,
                     children: [
                       CircleAvatar(
-                        backgroundColor: const Color(0xffe6e6e6),
-                        radius: 26.sp,
-                        child:ClipRRect(borderRadius: BorderRadius.circular(50.sp),child: DataController.avatar.isEmpty
-                            ? Image.asset(AssetsRes.AVATAR)
-                            : Image.file(
-                          File(DataController.avatar.value),
-                          width: 40.w,
-                          height: 40.w,
-                          fit: BoxFit.cover,
-                        ),
-                      )),
+                          backgroundColor: const Color(0xffe6e6e6),
+                          radius: 26.sp,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(50.sp),
+                            child: DataController.avatar.isEmpty
+                                ? Image.asset(AssetsRes.AVATAR)
+                                : Image.file(
+                                    File(DataController.avatar.value),
+                                    width: 40.w,
+                                    height: 40.w,
+                                    fit: BoxFit.cover,
+                                  ),
+                          )),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -76,54 +74,105 @@ class SettingView extends StatelessWidget {
             height: 1.h,
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal:8.w,vertical: 5.h),
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
             width: 100.w,
             color: const Color(0xfff1f6fd),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(8.sp)),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8.sp)),
                   child: Column(
                     children: [
                       ListTile(
                         title: Text("Edit profile"),
                         minLeadingWidth: 0,
-                        onTap: ()=>Get.toNamed(Routes.EDIT_PROFILE),
-                        leading: Image.asset(AssetsRes.EDIT,scale: 2.5.sp,color: Color(0xff5666d8),),
+                        onTap: () => Get.toNamed(Routes.EDIT_PROFILE),
+                        leading: Image.asset(
+                          AssetsRes.EDIT,
+                          scale: 2.5.sp,
+                          color: Color(0xff5666d8),
+                        ),
                       ),
-                      Divider(endIndent: 5.w,indent: 5.w,height: 0),
+                      Divider(endIndent: 5.w, indent: 5.w, height: 0),
                       ListTile(
                         title: Text("App settings"),
                         minLeadingWidth: 0,
-                        leading: Image.asset(AssetsRes.APP_SETTINGS,scale: 3.sp,color: Color(0xff5666d8),),
+                        leading: Image.asset(
+                          AssetsRes.APP_SETTINGS,
+                          scale: 3.sp,
+                          color: Color(0xff5666d8),
+                        ),
                       ),
-                      Divider(endIndent: 5.w,indent: 5.w,height: 0),
+                      Divider(endIndent: 5.w, indent: 5.w, height: 0),
                       ListTile(
                         title: Text("Notifications"),
                         minLeadingWidth: 0,
-                       leading: Image.asset(AssetsRes.NOTIFICATION,scale: 3.sp,color: Color(0xff5666d8),),
+                        leading: Image.asset(
+                          AssetsRes.NOTIFICATION,
+                          scale: 3.sp,
+                          color: Color(0xff5666d8),
+                        ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 5.h,),
+                SizedBox(
+                  height: 5.h,
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text("Send feedback",style: TextStyle(fontSize: 12.sp),),
-                    SizedBox(width: 1.w,),
-                    Image.asset(AssetsRes.TO,scale: 3.sp,),
+                    Text(
+                      "Send feedback",
+                      style: TextStyle(fontSize: 12.sp),
+                    ),
+                    SizedBox(
+                      width: 1.w,
+                    ),
+                    Image.asset(
+                      AssetsRes.TO,
+                      scale: 3.sp,
+                    ),
                   ],
                 ),
-                SizedBox(height: 2.h,),
-                Text("About us",style: TextStyle(fontSize: 12.sp),),
-                SizedBox(height: 2.h,),
-                Text("Rate app",style: TextStyle(fontSize: 12.sp),),
-                SizedBox(height: 3.h,),
-                Text("Sign out",style: TextStyle(fontSize: 12.sp,color: const Color(0xff5666d8)),),
-                SizedBox(height: 2.h,),
-                Text("v1.02",style: TextStyle(fontSize: 12.sp,color: const Color(0xff9c9dac)),),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  "About us",
+                  style: TextStyle(fontSize: 12.sp),
+                ),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  "Rate app",
+                  style: TextStyle(fontSize: 12.sp),
+                ),
+                SizedBox(
+                  height: 3.h,
+                ),
+                GestureDetector(
+                    onTap: () {
+                      DataController.clearValues();
+                      Get.offAllNamed(Routes.CHOOSE_USER);
+                    },
+                    child: Text(
+                      "Sign out",
+                      style: TextStyle(
+                          fontSize: 12.sp, color: const Color(0xff5666d8)),
+                    )),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  "v1.02",
+                  style: TextStyle(
+                      fontSize: 12.sp, color: const Color(0xff9c9dac)),
+                ),
               ],
             ),
           ),

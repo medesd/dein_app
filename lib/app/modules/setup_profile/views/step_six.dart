@@ -15,7 +15,6 @@ class StepSix extends StatefulWidget {
 
 class _StepSixState extends State<StepSix> {
   var controller = Get.put(SetupProfileController());
-  var textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class _StepSixState extends State<StepSix> {
         ),
         DTextField(
           withShadow: false,
-          controller: textController,
+          onChanged: (val)=>controller.skill(val),
           withBorder: true,
           placeHolder: "Skills",
           suffix: Align(
@@ -45,8 +44,9 @@ class _StepSixState extends State<StepSix> {
               padding: EdgeInsets.only(top: 2.w, bottom: 2.w, right: 2.w),
               child: GestureDetector(
                 onTap: () {
-                  if (textController.text.isEmpty) return;
-                  controller.addSkill(textController.text);
+                  if (controller.skill.isEmpty) return;
+                  controller.addSkill(controller.skill.value);
+                  controller.skill("");
                 },
                 child: Image.asset(
                   AssetsRes.PLUS_FILLED,

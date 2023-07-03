@@ -49,4 +49,6 @@ class AssetsRes {
   static const String THANK_YOU = 'assets/images/thank_you.png';
   static const String USER1 = 'assets/images/user1.PNG';
   static const String USER2 = 'assets/images/user2.PNG';
+  static const String RINGING = 'assets/media/ringing.mp3';
+  static const String VIDEO_CALL = 'assets/media/video_call.mp4';
 }

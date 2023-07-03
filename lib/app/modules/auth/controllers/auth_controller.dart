@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import '../../../routes/app_pages.dart';
 
 class AuthController extends GetxController {
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+  var email = "example@example.com".obs;
+  var password = "12345678".obs;
 
   @override
   void onInit() {
@@ -23,7 +23,7 @@ class AuthController extends GetxController {
   }
 
   void submitForm() {
-    if (email.text == "example@example.com" && password.text == "12345678") {
+    if (email.value == "example@example.com" && password.value == "12345678") {
       Get.offAllNamed(Routes.SETUP_PROFILE);
     } else {
       Get.showSnackbar(

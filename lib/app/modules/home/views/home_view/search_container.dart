@@ -16,7 +16,6 @@ class SearchContainer extends GetView<HomeController> {
       onTap: () {
         controller.searchMode(1);
         controller.keyword(text);
-        controller.searchController.value = TextEditingValue(text: text);
       },
       child: Container(
         padding: EdgeInsets.all(5.sp),
@@ -51,11 +50,13 @@ class SearchContainer extends GetView<HomeController> {
         SizedBox(
           height: 4.h,
         ),
-        DTextField(
-          controller: controller.searchController,
+        Obx(()=>DTextField(
+          defaultValue: controller.keyword.value,
           withShadow: false,
           placeHolder: "eg. doctor, financing consultant...",
-        ),
+          onChanged: (val)=>controller.keyword(val.toLowerCase()
+              .replaceAll(" ", "_")),
+        ),),
         SizedBox(
           height: 4.h,
         ),
@@ -77,10 +78,6 @@ class SearchContainer extends GetView<HomeController> {
         DButton(
           text: "Search",
           onPress: () {
-            if (controller.searchController.text.isEmpty) return;
-            controller.keyword(controller.searchController.text
-                .toLowerCase()
-                .replaceAll(" ", "_"));
             controller.searchMode(1);
           },
         ),

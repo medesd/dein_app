@@ -8,6 +8,7 @@ class SetupProfileController extends GetxController {
   var pageIndex = 0.obs;
   final PageController controller = PageController(initialPage: 0);
   final ImagePicker picker = ImagePicker();
+  var skill="".obs;
 
   var appBarText = [
     "Your profile",

@@ -56,7 +56,7 @@ class SearchView extends GetView<HomeController> {
                     padding: EdgeInsets.symmetric(horizontal: 5.w),
                     child: Obx(
                       () => Text(
-                        "Good morning,\n${DataController.name.value.isNotEmpty ? DataController.name.value : "David"}.",
+                        "Good morning,\n${DataController.name.value}",
                         style: TextStyle(
                             color: const Color(0xff292c57),
                             fontSize: 20.sp,

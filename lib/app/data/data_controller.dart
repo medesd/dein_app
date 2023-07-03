@@ -8,7 +8,7 @@ import 'document_parser.dart';
 
 class DataController {
   static var avatar = "".obs;
-  static var name = "medesd".obs;
+  static var name = "".obs;
   static var document = "".obs;
   static var skills = <String>[].obs;
   static var birthday = DateTime.now().obs;
@@ -17,7 +17,22 @@ class DataController {
   static var userPhoneNumber = "".obs;
   static var documentList = <String?>[].obs;
   static var userDocument = <DocumentParser>[].obs;
-  static var userSchedule=<ScheduleParser>[].obs;
+  static var userSchedule = <ScheduleParser>[].obs;
+
+  static void clearValues(){
+    name("");
+    avatar("");
+    document("");
+    skills([]);
+    documentList([]);
+    userDocument([]);
+    userSchedule([]);
+    matches([]);
+    birthday(DateTime.now());
+    userLocation("");
+    userAbout("");
+    userPhoneNumber("");
+  }
 
   static var users = [
     {
@@ -123,7 +138,18 @@ communication issues
 
   static var messages = [
     {
-      "date": "2023-07-02",
+      "date": "2023-07-01 02:18:26",
+      "user": 2,
+      "data": [
+        {
+          "user": 2,
+          "message": "hello",
+          "date": "2023-07-01 02:18:26",
+        },
+      ]
+    },
+    {
+      "date": "2023-07-02 02:18:26",
       "user": 1,
       "data": [
         {

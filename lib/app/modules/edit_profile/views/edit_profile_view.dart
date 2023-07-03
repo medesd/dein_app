@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../widgets/d_textfield.dart';
 import '../../setup_profile/views/empty_photo_card.dart';
 import '../../setup_profile/views/photo_card.dart';
@@ -17,7 +18,6 @@ class EditProfileView extends GetView<EditProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    var textController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -50,14 +50,20 @@ class EditProfileView extends GetView<EditProfileController> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Signed in as ${DataController.name}.",
+                      "Signed in as ${DataController.name}",
                       style: TextStyle(
                           color: const Color(0xff292c57), fontSize: 15.sp),
                     ),
-                    Text(
-                      "Sign out",
-                      style: TextStyle(
-                          color: const Color(0xff5666d8), fontSize: 15.sp),
+                    GestureDetector(
+                      onTap: (){
+                        DataController.clearValues();
+                        Get.offAllNamed(Routes.CHOOSE_USER);
+                      },
+                      child: Text(
+                        "Sign out",
+                        style: TextStyle(
+                            color: const Color(0xff5666d8), fontSize: 15.sp),
+                      ),
                     ),
                   ],
                 ),
@@ -94,9 +100,11 @@ class EditProfileView extends GetView<EditProfileController> {
                 () => Row(
                   children: [
                     if (DataController.avatar.isEmpty)
-                      GestureDetector(onTap: (){
-                        controller.profileController.pickSelfie();
-                      },child: const EmptyPhotoCard())
+                      GestureDetector(
+                          onTap: () {
+                            controller.profileController.pickSelfie();
+                          },
+                          child: const EmptyPhotoCard())
                     else
                       PhotoCard(image: DataController.avatar.value),
                     SizedBox(
@@ -223,28 +231,30 @@ class EditProfileView extends GetView<EditProfileController> {
               ),
               SizedBox(height: 3.h),
               DTextField(
-                withShadow: false,
-                controller: textController,
-                withBorder: true,
-                placeHolder: "Skills",
-                suffix: Align(
-                  alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 2.w, bottom: 2.w, right: 2.w),
-                    child: GestureDetector(
-                      onTap: () {
-                        if (textController.text.isEmpty) return;
-                        controller.profileController
-                            .addSkill(textController.text);
-                      },
-                      child: Image.asset(
-                        AssetsRes.PLUS_FILLED,
-                        scale: 1.sp,
+                    withShadow: false,
+                    onChanged: (val) => controller.skill(val),
+                    withBorder: true,
+                    placeHolder: "Skills",
+                    suffix: Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding:
+                            EdgeInsets.only(top: 2.w, bottom: 2.w, right: 2.w),
+                        child: GestureDetector(
+                          onTap: () {
+                            if (controller.skill.isEmpty) return;
+                            controller.profileController
+                                .addSkill(controller.skill.value);
+                            controller.skill("");
+                          },
+                          child: Image.asset(
+                            AssetsRes.PLUS_FILLED,
+                            scale: 1.sp,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
               SizedBox(height: 2.h),
               Obx(() => Wrap(
                     spacing: 2.w,

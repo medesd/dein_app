@@ -49,6 +49,7 @@ dependencies:
   path_provider: ^2.0.15
   stop_watch_timer: ^2.0.0
   file_picker: ^5.3.2
+  video_player: ^2.7.0
 
 dev_dependencies:
   flutter_test:
@@ -147,3 +148,5 @@ flutter:
     - assets/images/thank_you.png
     - assets/images/user1.PNG
     - assets/images/user2.PNG
+    - assets/media/ringing.mp3
+    - assets/media/video_call.mp4

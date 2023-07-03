@@ -28,28 +28,27 @@ class MatchContainer extends GetView<HomeController> {
           SizedBox(
             height: 4.h,
           ),
-          DTextField(
-            withShadow: false,
-            controller: controller.searchController,
-            suffix: Padding(
-              padding: EdgeInsets.only(top: 1.h, bottom: 1.h, right: 1.h),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {
-                    controller.keyword(controller.searchController.text
-                        .toLowerCase()
-                        .replaceAll(" ", "_"));
-                    controller.searchMode(1);
-                  },
-                  child: Image.asset(
-                    AssetsRes.SEARCH_FILLED,
-                    scale: 1.sp,
+          Obx(() => DTextField(
+                withShadow: false,
+                defaultValue: controller.keyword.value,
+                onChanged: (val) =>
+                    controller.keyword(val.toLowerCase().replaceAll(" ", "_")),
+                suffix: Padding(
+                  padding: EdgeInsets.only(top: 1.h, bottom: 1.h, right: 1.h),
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: GestureDetector(
+                      onTap: () {
+                        controller.searchMode(1);
+                      },
+                      child: Image.asset(
+                        AssetsRes.SEARCH_FILLED,
+                        scale: 1.sp,
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-          ),
+              )),
           SizedBox(
             height: 4.h,
           ),

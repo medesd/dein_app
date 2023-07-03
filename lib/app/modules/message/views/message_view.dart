@@ -101,7 +101,7 @@ class MessageView extends GetView<MessageController> {
                       GestureDetector(
                         onTap: () {
                           Get.dialog(
-                            const MessageOptions(),
+                            MessageOptions(user:controller.user),
                             useSafeArea: true,
                             barrierColor: Colors.transparent,
                             arguments: controller.user.id

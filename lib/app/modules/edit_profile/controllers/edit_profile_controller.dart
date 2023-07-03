@@ -3,8 +3,7 @@ import 'package:get/get.dart';
 
 class EditProfileController extends GetxController {
   var profileController=Get.put(SetupProfileController());
-
-  final count = 0.obs;
+  var skill="".obs;
   @override
   void onInit() {
     super.onInit();
@@ -19,6 +18,4 @@ class EditProfileController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

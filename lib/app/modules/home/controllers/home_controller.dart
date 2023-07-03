@@ -19,7 +19,7 @@ class HomeController extends GetxController {
 
   var searchController = TextEditingController();
 
-  var swipeController = AppinioSwiperController();
+
 
   @override
   void onInit() {
