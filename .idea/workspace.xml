@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d1d45cb-f61e-44f9-a825-d22419978006" name="Changes" comment="video_call_request_video">
-      <change afterPath="$PROJECT_DIR$/assets/media/ringing.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/media/video_call.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+    <list default="true" id="1d1d45cb-f61e-44f9-a825-d22419978006" name="Changes" comment="final">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
@@ -20,32 +17,44 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/data/data_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/data/data_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/data/schedule_parser.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/data/schedule_parser.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/auth/controllers/auth_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/auth/controllers/auth_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/auth/views/auth_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/auth/views/auth_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/choose_user/controllers/choose_user_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/choose_user/controllers/choose_user_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/choose_user/views/choose_user_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/choose_user/views/choose_user_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/edit_profile/controllers/edit_profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/edit_profile/controllers/edit_profile_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/edit_profile/views/edit_profile_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/edit_profile/views/edit_profile_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/match_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/match_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/matches.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/matches.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/search_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/search_container.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/search_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view/search_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/message_view/message_home_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/message_view/message_home_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/setting_view/setting_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/setting_view/setting_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/message/controllers/message_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/message/controllers/message_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/message/views/message_options.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/message/views/message_options.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/message/views/message_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/message/views/message_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/message/views/tabs/chat_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/message/views/tabs/chat_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/controllers/setup_profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/controllers/setup_profile_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_six.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_six.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/message/views/tabs/document_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/message/views/tabs/document_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/pre_auth/controllers/pre_auth_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/pre_auth/controllers/pre_auth_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/pre_auth/views/pre_auth_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/pre_auth/views/pre_auth_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/photo_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/photo_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/setup_profile_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/setup_profile_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_five.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_five.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_one.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_one.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_seven.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_seven.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_three.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_three.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/setup_profile/views/step_two.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/splash/controllers/splash_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/splash/controllers/splash_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/splash/views/splash_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/splash/views/splash_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/user_details/views/user_details_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/user_details/views/user_details_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/video_call/controllers/video_call_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/video_call/controllers/video_call_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/video_call/views/camera_preview.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/video_call/views/camera_preview.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/video_call/views/video_call_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/video_call/views/video_call_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/routes/app_pages.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/routes/app_pages.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/routes/app_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/routes/app_routes.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/widgets/d_textfield.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/widgets/d_textfield.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/res/assets_res.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/res/assets_res.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -75,20 +84,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mohamed/StudioProjects/dein_app&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AtomConfig&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "C:/Users/mohamed/StudioProjects/dein_app",
+    "settings.editor.selected.configurable": "AtomConfig",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mohamed\StudioProjects\dein_app\assets\media" />
@@ -155,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688338845850</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="final">
+      <created>1688404847337</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688404847337</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +192,7 @@
     <MESSAGE value="video_call_start" />
     <MESSAGE value="video_call_process" />
     <MESSAGE value="video_call_request_video" />
-    <option name="LAST_COMMIT_MESSAGE" value="video_call_request_video" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
 </project>

@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/modules/setup_profile/controllers/setup_profile_controller.dart';
-import 'package:dein_app/app/widgets/d_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -14,7 +13,6 @@ class StepOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dataController = Get.put(DataController());
     var setupController = Get.put(SetupProfileController());
     return Column(
       children: [

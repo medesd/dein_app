@@ -21,11 +21,6 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin camera_android, io.flutter.plugins.camera.CameraPlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new com.ed_screen_recorder.ed_screen_recorder.EdScreenRecorderPlugin());
-    } catch(Exception e) {
-      Log.e(TAG, "Error registering plugin ed_screen_recorder, com.ed_screen_recorder.ed_screen_recorder.EdScreenRecorderPlugin", e);
-    }
-    try {
       flutterEngine.getPlugins().add(new com.mr.flutter.plugin.filepicker.FilePickerPlugin());
     } catch(Exception e) {
       Log.e(TAG, "Error registering plugin file_picker, com.mr.flutter.plugin.filepicker.FilePickerPlugin", e);

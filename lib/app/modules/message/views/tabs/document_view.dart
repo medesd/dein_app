@@ -29,6 +29,7 @@ class DocumentView extends GetView<MessageController> {
                     .where((p0) => p0.user == controller.user.id)
                     .map(
                       (e) => Container(
+                        margin: EdgeInsets.symmetric(vertical: 1.h),
                         padding: EdgeInsets.symmetric(
                             horizontal: 3.w, vertical: 2.h),
                         decoration: BoxDecoration(

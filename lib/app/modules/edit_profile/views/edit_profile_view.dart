@@ -75,7 +75,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 children: [
                   Image.asset(
                     AssetsRes.SWISS_ID,
-                    color: Color(0xff9c9dac),
+                    color: const Color(0xff9c9dac),
                     scale: 3.sp,
                   ),
                   SizedBox(
@@ -83,7 +83,7 @@ class EditProfileView extends GetView<EditProfileController> {
                   ),
                   Text(
                     "SwissID profile",
-                    style: TextStyle(color: Color(0xff646681), fontSize: 13.sp),
+                    style: TextStyle(color: const Color(0xff646681), fontSize: 13.sp),
                   )
                 ],
               ),

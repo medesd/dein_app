@@ -1,4 +1,3 @@
-import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/data/user_parser.dart';
 import 'package:dein_app/app/modules/video_call/views/record_video_popup.dart';
 import 'package:dein_app/res/assets_res.dart';

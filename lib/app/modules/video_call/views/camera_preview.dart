@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
+// ignore_for_file: constant_identifier_names
 enum CameraOption { Front, Back }
 
 class CallCameraPreview extends StatefulWidget {

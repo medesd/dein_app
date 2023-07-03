@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
 class DTextField extends StatefulWidget {
@@ -84,12 +83,12 @@ class _DTextFieldState extends State<DTextField> {
               fillColor: Colors.white,
               border: widget.withBorder
                   ? normalBorder(
-                      color: Color(0xffeaeaea),
+                      color: const Color(0xffeaeaea),
                     )
                   : normalBorder(),
               focusedBorder: widget.withBorder
                   ? normalBorder(
-                      color: Color(0xffeaeaea),
+                      color: const Color(0xffeaeaea),
                     )
                   : normalBorder(),
               focusedErrorBorder: normalBorder(color: Colors.red),
@@ -97,7 +96,7 @@ class _DTextFieldState extends State<DTextField> {
               disabledBorder: normalBorder(color: Colors.grey),
               enabledBorder: widget.withBorder
                   ? normalBorder(
-                      color: Color(0xffeaeaea),
+                      color: const Color(0xffeaeaea),
                     )
                   : normalBorder(),
             ),

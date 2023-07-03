@@ -1,8 +1,6 @@
 import 'package:dein_app/app/data/data_controller.dart';
-import 'package:dein_app/app/widgets/d_button.dart';
 import 'package:dein_app/app/widgets/d_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:scroll_date_picker/scroll_date_picker.dart';
 import 'package:sizer/sizer.dart';
 

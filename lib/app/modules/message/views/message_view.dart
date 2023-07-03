@@ -1,4 +1,3 @@
-import 'package:dein_app/app/data/data_controller.dart';
 import 'package:dein_app/app/modules/message/views/message_options.dart';
 import 'package:dein_app/app/modules/message/views/tabs/chat_view.dart';
 import 'package:dein_app/app/modules/message/views/tabs/document_view.dart';

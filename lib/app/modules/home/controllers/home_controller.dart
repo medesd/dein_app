@@ -1,4 +1,3 @@
-import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:dein_app/app/modules/home/views/message_view/message_home_view.dart';
 import 'package:dein_app/app/modules/home/views/setting_view/setting_view.dart';
 import 'package:dein_app/app/data/user_parser.dart';

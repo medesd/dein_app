@@ -49,7 +49,7 @@ class SetupProfileView extends GetView<SetupProfileController> {
             ),
           ),
           actions: [
-            Obx(() => [1, 0].contains(controller.pageIndex.value)
+            Obx(() => [1, 0, 6].contains(controller.pageIndex.value)
                 ? Container()
                 : InkWell(
                     onTap: () {

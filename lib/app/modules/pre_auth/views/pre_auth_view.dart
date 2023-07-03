@@ -14,7 +14,7 @@ class PreAuthView extends GetView<PreAuthController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff1f6fd),
+      backgroundColor: const Color(0xfff1f6fd),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 7.w),
         child: Column(
@@ -27,7 +27,7 @@ class PreAuthView extends GetView<PreAuthController> {
             Text(
               "Discover services",
               style: TextStyle(
-                color: Color(0xFF292c57),
+                color: const Color(0xFF292c57),
                 fontSize: 15.sp,
                 fontWeight: FontWeight.bold,
               ),
@@ -49,7 +49,7 @@ class PreAuthView extends GetView<PreAuthController> {
             DButton(
               text: "Continue with google",
               color: Colors.white,
-              textColor: Color(0xff292c57),
+              textColor: const Color(0xff292c57),
               icon: Padding(
                 padding: EdgeInsets.only(right: 4.w),
                 child: Image.asset(
@@ -65,7 +65,7 @@ class PreAuthView extends GetView<PreAuthController> {
               text: "Register with Email",
               onPress: ()=>Get.toNamed(Routes.AUTH),
               color: Colors.white,
-              textColor: Color(0xff292c57),
+              textColor: const Color(0xff292c57),
               icon: Padding(
                 padding: EdgeInsets.only(right: 7.w),
                 child: Image.asset(
@@ -80,7 +80,7 @@ class PreAuthView extends GetView<PreAuthController> {
             DButton(
               text: "Continue with SwissID",
               onPress: ()=>Get.toNamed(Routes.AUTH),
-              color: Color(0xff5666d8),
+              color: const Color(0xff5666d8),
               icon: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Image.asset(

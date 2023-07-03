@@ -45,7 +45,6 @@ dependencies:
   chat_bubbles: ^1.4.1
   intl: ^0.18.1
   camera: ^0.10.5+2
-  ed_screen_recorder: ^0.0.13
   path_provider: ^2.0.15
   stop_watch_timer: ^2.0.0
   file_picker: ^5.3.2

@@ -631,7 +631,7 @@ Widget softwareDeveloperFilter() {
       ),
       Row(
         children: [
-          Expanded(
+          const Expanded(
               child: DTextField(
             withShadow: false,
             withBorder: true,
@@ -640,7 +640,7 @@ Widget softwareDeveloperFilter() {
           SizedBox(
             width: 4.w,
           ),
-          Expanded(
+          const Expanded(
               child: DTextField(
             withShadow: false,
             withBorder: true,

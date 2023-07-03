@@ -71,7 +71,7 @@ class MessageOptions extends StatelessWidget {
                       Container(
                         width: 89.w,
                         decoration: BoxDecoration(
-                          color: Color(0xfff1f6fd),
+                          color: const Color(0xfff1f6fd),
                           borderRadius: BorderRadius.circular(10.sp),
                         ),
                         child: ListTile(
@@ -86,7 +86,7 @@ class MessageOptions extends StatelessWidget {
                                 builder: (context, child) {
                                   return Theme(
                                     data: Theme.of(context).copyWith(
-                                      colorScheme: ColorScheme.light(
+                                      colorScheme: const ColorScheme.light(
                                         primary: Color(0xff5666d8),
                                         // <-- SEE HERE
                                         onPrimary: Colors.white,
@@ -96,7 +96,7 @@ class MessageOptions extends StatelessWidget {
                                       ),
                                       textButtonTheme: TextButtonThemeData(
                                         style: TextButton.styleFrom(
-                                          primary: Color(
+                                          foregroundColor: const Color(
                                               0xff5666d8), // button text color
                                         ),
                                       ),
@@ -115,7 +115,7 @@ class MessageOptions extends StatelessWidget {
                                   builder: (context, child) {
                                     return Theme(
                                       data: Theme.of(context).copyWith(
-                                        colorScheme: ColorScheme.light(
+                                        colorScheme: const ColorScheme.light(
                                           primary: Color(0xff5666d8),
                                           // <-- SEE HERE
                                           onPrimary: Colors.white,
@@ -125,7 +125,7 @@ class MessageOptions extends StatelessWidget {
                                         ),
                                         textButtonTheme: TextButtonThemeData(
                                           style: TextButton.styleFrom(
-                                            primary: Color(
+                                            foregroundColor: const Color(
                                                 0xff5666d8), // button text color
                                           ),
                                         ),
@@ -156,7 +156,7 @@ class MessageOptions extends StatelessWidget {
                       Container(
                         width: 89.w,
                         decoration: BoxDecoration(
-                          color: Color(0xfff1f6fd),
+                          color: const Color(0xfff1f6fd),
                           borderRadius: BorderRadius.circular(10.sp),
                         ),
                         child: ListTile(
@@ -174,7 +174,7 @@ class MessageOptions extends StatelessWidget {
                             );
                             Get.toNamed(Routes.VIDEO_CALL, arguments: user);
                           },
-                          title: Text("Schedule video call"),
+                          title: const Text("Schedule video call"),
                         ),
                       ),
                       SizedBox(
@@ -183,7 +183,7 @@ class MessageOptions extends StatelessWidget {
                       Container(
                         width: 89.w,
                         decoration: BoxDecoration(
-                          color: Color(0xfff1f6fd),
+                          color: const Color(0xfff1f6fd),
                           borderRadius: BorderRadius.circular(10.sp),
                         ),
                         child: ListTile(
@@ -192,7 +192,7 @@ class MessageOptions extends StatelessWidget {
                             scale: 3.sp,
                           ),
                           minLeadingWidth: 7.w,
-                          title: Text("Request a contract"),
+                          title: const Text("Request a contract"),
                         ),
                       ),
                       SizedBox(

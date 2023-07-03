@@ -4,18 +4,4 @@ import 'package:get/get.dart';
 class EditProfileController extends GetxController {
   var profileController=Get.put(SetupProfileController());
   var skill="".obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
 }

@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:dein_app/res/assets_res.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class PhotoCard extends StatelessWidget {

@@ -26,6 +26,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
+  // ignore_for_file: constant_identifier_names
   static const INITIAL = Routes.HOME;
 
   static final routes = [

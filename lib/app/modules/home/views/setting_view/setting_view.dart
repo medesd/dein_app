@@ -87,33 +87,33 @@ class SettingView extends StatelessWidget {
                   child: Column(
                     children: [
                       ListTile(
-                        title: Text("Edit profile"),
+                        title: const Text("Edit profile"),
                         minLeadingWidth: 0,
                         onTap: () => Get.toNamed(Routes.EDIT_PROFILE),
                         leading: Image.asset(
                           AssetsRes.EDIT,
                           scale: 2.5.sp,
-                          color: Color(0xff5666d8),
+                          color: const Color(0xff5666d8),
                         ),
                       ),
                       Divider(endIndent: 5.w, indent: 5.w, height: 0),
                       ListTile(
-                        title: Text("App settings"),
+                        title: const Text("App settings"),
                         minLeadingWidth: 0,
                         leading: Image.asset(
                           AssetsRes.APP_SETTINGS,
                           scale: 3.sp,
-                          color: Color(0xff5666d8),
+                          color: const Color(0xff5666d8),
                         ),
                       ),
                       Divider(endIndent: 5.w, indent: 5.w, height: 0),
                       ListTile(
-                        title: Text("Notifications"),
+                        title: const Text("Notifications"),
                         minLeadingWidth: 0,
                         leading: Image.asset(
                           AssetsRes.NOTIFICATION,
                           scale: 3.sp,
-                          color: Color(0xff5666d8),
+                          color: const Color(0xff5666d8),
                         ),
                       ),
                     ],

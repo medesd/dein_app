@@ -438,11 +438,11 @@ class UserDetailsView extends GetView<UserDetailsController> {
                                       Get.toNamed(Routes.MESSAGE,
                                           arguments: controller.user.value);
                                     },
-                                    child: Obx(()=>!DataController.matches
+                                    child: Obx(()=>DataController.matches
                                             .where((p0) =>
                                                 p0.id ==
                                                 controller.user.value.id)
-                                            .isEmpty
+                                            .isNotEmpty
                                         ? Container(
                                             padding: EdgeInsets.all(12.sp),
                                             decoration: BoxDecoration(

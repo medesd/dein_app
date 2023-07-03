@@ -14,7 +14,7 @@ class ChooseUserView extends GetView<ChooseUserController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff1f6fd),
+      backgroundColor: const Color(0xfff1f6fd),
       appBar: AppBar(
         leading: Container(),
         backgroundColor: Colors.transparent,
@@ -79,7 +79,7 @@ class ChooseUserView extends GetView<ChooseUserController> {
                               SizedBox(
                                 height: 2.h,
                               ),
-                              Text("Choose this if you are looking for\nservices or are unemployed.",style: TextStyle(color: Color(0xFF646681)),)
+                              const Text("Choose this if you are looking for\nservices or are unemployed.",style: TextStyle(color: Color(0xFF646681)),)
                             ],
                           ),
                         ),
@@ -131,7 +131,7 @@ class ChooseUserView extends GetView<ChooseUserController> {
                               SizedBox(
                                 height: 2.h,
                               ),
-                              Text("Choose this if you are providing\nservices or looking for employees.",style: TextStyle(color: Color(0xFF646681)),)
+                              const Text("Choose this if you are providing\nservices or looking for employees.",style: TextStyle(color: Color(0xFF646681)),)
                             ],
                           ),
                         ),

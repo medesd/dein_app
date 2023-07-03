@@ -1,5 +1,4 @@
 import 'package:dein_app/app/modules/home/controllers/home_controller.dart';
-import 'package:dein_app/res/assets_res.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
